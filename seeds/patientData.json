@@ -1,13 +1,13 @@
 [
     {
-        "id": " ",
-        "dob": " ",
-        "height": " ",
-        "weight": " ",
-        "email": " ",
-        "address": " ",
-        "city": " ",
-        "state": " ",
-        "postal_code": " "
+        "id": "1",
+        "dob": "01/01/2000 ",
+        "height": "64",
+        "weight": "120",
+        "email": "samuel@gmail.com",
+        "address": "123 Elm Ave",
+        "city": "Queens",
+        "state": "New York",
+        "postal_code": "11111"
     }
 ]

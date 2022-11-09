@@ -1,8 +1,8 @@
 [
     {
-        "id": " ",
-        "prescription_id": " ",
-        "created_at": " ",
-        "note": " "
+        "id": "1",
+        "prescription_id": "4",
+        "created_at": "11/09/2022",
+        "note": "notes"
     }
 ]

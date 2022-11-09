@@ -1,13 +1,13 @@
 [
     {
-        "id": " ",
-        "patient_id": " ",
-        "med_given": " ",
-        "quantity": " ",
-        "dose": " ",
-        "dispense_date": " ",
-        "date_started": " ",
-        "date_ended": " ",
-        "deleted_at": " "
+        "id": "1",
+        "patient_id": "1",
+        "med_given": "EpiPen",
+        "quantity": "2",
+        "dose": "100",
+        "dispense_date": "09/09/2022",
+        "date_started": "09/10/2022",
+        "date_ended": "11/10/2022",
+        "deleted_at": "11/11/2022"
     }
 ]
