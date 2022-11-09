@@ -1,9 +1,12 @@
-//middleware / add to util folder
-// const checkAuth = (req, res, next) => {
-//     if (!req.session.loggedIn) {
-//       res.redirect('/login');
-//     } 
-//     next()
-// }
+const router = require('express').Router();
 
-//checkauth function
+//GET homepage
+router.get("/", (req, res) => {
+    res.render("all", {layout: "homepage"})
+    //render 
+})
+
+
+
+
+module.exports = router;
