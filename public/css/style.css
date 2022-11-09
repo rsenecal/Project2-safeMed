@@ -1,0 +1,12 @@
+body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  .custom-bg-primary {
+    background-color: #84b556;
+  }
