@@ -1,7 +1,8 @@
 const User = require('./user');
 const Patient = require('./patient');
-const Prescription = require('./prescriptions');
+const Prescription = require('./prescription');
 const Pres_History = require('./pres_history');
+const Med = require('./med')
 
 User.hasOne(Patient, {
     foreignKey: 'user_id',
@@ -25,11 +26,19 @@ Pres_History.belongsTo(Prescription, {
     foreignKey: 'prescription_id',
 });
 
+Med.belongsTo(Prescription, {
+    foreignKey: 'prescription_med_given',
+});
+
 Prescription.hasMany(Pres_History, {
-    foreignKey: 'prescription_id'
-})
+    foreignKey: 'prescription_id',
+},
+    Med, {
+    foreignKey: 'prescription_med_given'
+}
+)
 
 
 
 
-module.exports = { User, Patient, Prescription, Pres_History };
+module.exports = { User, Patient, Prescription, Pres_History, Med };
