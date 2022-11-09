@@ -1,0 +1,13 @@
+[
+    {
+        "id": " ",
+        "patient_id": " ",
+        "med_given": " ",
+        "quantity": " ",
+        "dose": " ",
+        "dispense_date": " ",
+        "date_started": " ",
+        "date_ended": " ",
+        "deleted_at": " "
+    }
+]
