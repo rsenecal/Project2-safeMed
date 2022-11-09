@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS safemed_db;
+
+CREATE DATABASE safemed_db;
