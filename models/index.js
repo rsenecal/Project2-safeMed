@@ -1,6 +1,6 @@
 const User = require('./user');
 const Patient = require('./patient');
-const Prescription = require('./prescriptions');
+const Prescription = require('./prescription');
 const Pres_History = require('./pres_history');
 const Med = require('./med')
 
