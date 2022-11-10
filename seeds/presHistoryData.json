@@ -1,7 +1,6 @@
 [
     {
-        "id": "1",
-        "prescription_id": "4",
+        "prescription_id": "1",
         "created_at": "11/09/2022",
         "note": "notes"
     }
