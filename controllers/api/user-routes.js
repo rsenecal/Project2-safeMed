@@ -46,25 +46,25 @@ router.post('/login', async (req, res) => {
   }
 
   // add user info to the session
-  // req.session.save(()=> {
-  //   req.session.loggedIn = true;
-  //   req.session.userId = user.id;
+  req.session.save(()=> {
+    req.session.loggedIn = true;
+    req.session.userId = user.id;
     res.status(200).json({
       message: 'successfully logged in'
     });
   });
-// });
+});
 
 // GET /api/users/logout - makes a new user
 router.get('/logout', async (req, res) => {
-  // if (req.session.loggedIn) {
-  //   // add user info to the session
+  if (req.session.loggedIn) {
+    // add user info to the session
   //   req.session.destroy(()=> {
-      res.status(204).end();
+    res.status(204).end();
     // });
-  // } else {
-  //   res.status(404).end();
-  // }
+  } else {
+    res.status(404).end();
+  }
 
 });
 
