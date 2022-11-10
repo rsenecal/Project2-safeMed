@@ -23,7 +23,8 @@ Med.init(
       unique: true,
 
     },
-
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
@@ -31,5 +32,6 @@ Med.init(
     modelName: 'Med'
   }
 );
+
 
 module.exports = Med;
