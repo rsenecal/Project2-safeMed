@@ -1,11 +1,29 @@
 [
     {
-        "username": "samuel",
-        "email": "samuel@gmail.com",
-        "first_name": "Samuel",
-        "last_name": "Barker",
+        "username": "ClaireT",
+        "email": "nightnurse@gmail.com",
+        "first_name": "Claire",
+        "last_name": "Temple",
+        "title": "Mrs.",
+        "password": "password",
+        "role": "Nurse"
+    },
+    {
+        "username": "Octopus1",
+        "email": "butterfingers@gmail.com",
+        "first_name": "Otto",
+        "last_name": "Octavius",
+        "title": "Dr.",
+        "password": "password",
+        "role": "Doctor"
+    },
+    {
+        "username": "ScarfaceRx",
+        "email": "scarface@gmail.com",
+        "first_name": "Tony",
+        "last_name": "Montana",
         "title": "Mr.",
         "password": "password",
-        "role": "patient"
+        "role": "Pharmacist"
     }
 ]

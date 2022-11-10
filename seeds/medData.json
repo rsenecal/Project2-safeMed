@@ -2,5 +2,17 @@
     {
         "name": "EpiPen",
         "maker": "Pfizer"
+    },
+    {
+        "name": "Omeprazole",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Helium",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Asprin",
+        "maker": "Bayer"
     }
 ]
