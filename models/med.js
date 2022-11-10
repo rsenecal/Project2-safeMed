@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Med extends Model {}
+class Med extends Model { }
 
 Med.init(
 
@@ -30,8 +30,9 @@ Med.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'Med'
-},
+  },
 
 );
+
 
 module.exports = Med;

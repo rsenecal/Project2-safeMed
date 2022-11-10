@@ -1,7 +1,8 @@
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 const sequelize = require('./config/connection');
 
+const session = require('express-session');
 
 const routes = require('./controllers');
 
@@ -10,6 +11,17 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Set up sessions
+const sess = {
+  secret: 'Super secret secret',
+  resave: false,
+  saveUninitialized: false,
+};
+
+app.use(session(sess));
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 const hbs = exphbs.create();
 
 app.engine('handlebars', hbs.engine);
@@ -31,7 +43,8 @@ sequelize.sync({ force: false })
 
   });
 
-// app.get('/', (req, res) =>
-//   res.sendFile(path.join(__dirname, 'public/index.html'))
+// app.listen(PORT, () =>
+//   console.log(`Example app listening at http://localhost:${PORT}`)
 // );
-
+// app.get('/', (req, res) =>
+//   res.sendFile(path.join(__dirname, 'public/index.html')))
