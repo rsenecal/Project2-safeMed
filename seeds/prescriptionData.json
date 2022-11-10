@@ -1,6 +1,5 @@
 [
     {
-        "id": "1",
         "patient_id": "1",
         "med_given": "EpiPen",
         "quantity": "2",

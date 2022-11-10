@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pres_History extends Model { }
+class PresHistory extends Model {}
 
-Pres_History.init(
+PresHistory.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -35,5 +35,5 @@ Pres_History.init(
   }
 );
 
-module.exports = Pres_History;
+module.exports = PresHistory;
 
