@@ -1,8 +1,6 @@
 ### Built With
-
-* [![NodeJS]][Node-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![Handlebars][Handlebars.com]][Handlebars-url]
+*  [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+*  [![Handlebars][Handlebars.com]][Handlebars-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -53,9 +51,8 @@
   ## Tests
   
 
-![Node.js](./public/img/nodedotjs.svg "Node.js")
-[Node-url]: https://https://nodejs.org/
-[Handlebars]: https://img.shields.io/badge/Handlebars-Handlebars-blue
+[Handlebarsjs.com]: https://img.shields.io/badge/Handlebars-Handlebars-blue
 [Handlebars-url]: https://handlebarsjs.com/
+
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
