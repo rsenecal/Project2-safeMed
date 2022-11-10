@@ -1,9 +1,10 @@
 ### Built With
 *  [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 *  [![Handlebars][Handlebarsjs.com]][Handlebars-url]
+*  [![NodeJS][Node.js]][Nodejs-url]
 
 # safeMed - eMAR Software
-  
+  ![safeMed Logo](./public/img/safeMed-icon.png "safeMed Logo")
   ## Description
     Our application is here to help transform technology in the healthcare field.
     safeMed is a unqiue Electronic Medication Admin Record database application that will help 
@@ -30,9 +31,9 @@
   ## Screenshots
 
   ## Installation
-  Step 1: This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
-  Step 2: Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
-  Step 3: Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
+  - This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
+  - Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
+  - Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
 
   ## Usage
   
@@ -53,3 +54,6 @@
 [Handlebars-url]: https://handlebarsjs.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+[Nodejs-url]: https://nodejs.org/en/ 
+[Node.js]: https://img.shields.io/badge/NodeJS-NodeJS-green
+
