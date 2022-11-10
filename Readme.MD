@@ -2,6 +2,8 @@
 *  [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 *  [![Handlebars][Handlebarsjs.com]][Handlebars-url]
 *  [![NodeJS][Node.js]][Nodejs-url]
+*  [![Sequelize][Sequelize]][Sequelize-url]
+*  [![MySQL][MySQL]][MySQL-url]
 
 # safeMed - eMAR Software
   ![safeMed Logo](./public/img/safeMed-icon.png "safeMed Logo")
@@ -52,8 +54,11 @@
 
 [Handlebarsjs.com]: https://img.shields.io/badge/Handlebars-Handlebars-blue
 [Handlebars-url]: https://handlebarsjs.com/
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-Bootstap-brightgreen
 [Bootstrap-url]: https://getbootstrap.com
 [Nodejs-url]: https://nodejs.org/en/ 
 [Node.js]: https://img.shields.io/badge/NodeJS-NodeJS-green
-
+[MySQL-url]: https://www.mysql.com/
+[MySQL]: https://img.shields.io/badge/mySql-mySql-lightgrey
+[Sequelize-url]: https://sequelize.org/
+[Sequelize]: https://img.shields.io/badge/Sequelize-Sequelize-orange
