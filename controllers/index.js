@@ -8,7 +8,7 @@ router.use('/home', homeRoutes);
 
 
 router.use((req, res) => {
-    res.status(404).end();
+  res.status(404).end();
 });
 
 
