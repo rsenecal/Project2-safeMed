@@ -14,11 +14,6 @@
     less time dealing with outdated technology. 
 
  
-
-
-
-  
-
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -31,13 +26,15 @@
   ## Screenshots
 
   ## Installation
-  
+  Step 1: This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
+  Step 2: Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
+  Step 3: Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
 
   ## Usage
   
 
   ## Credits
-  Evince, Jeff, Roodolph, Sindid, Hasan, Bria
+   Sindid Eedh, Evince Edouard, Jeff Grasso, Hasan Noor, Roodolph Senecal, Bria
 
   ## Questions
 
