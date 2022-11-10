@@ -31,6 +31,7 @@
 - [Questions](#questions)
 
   ## Screenshots
+   ![safeMed Excalidraw](./public/img/safeMedexcalidraw.png "Excalidraw Mockup")
 
   ## Installation
   - This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
