@@ -10,3 +10,8 @@ body {
   .custom-bg-primary {
     background-color: #84b556;
   }
+
+  /* login.handlebars */
+  .usernameAndPassword input{
+    
+  }
