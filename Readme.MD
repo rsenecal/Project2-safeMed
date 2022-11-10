@@ -1,18 +1,17 @@
 ### Built With
+*  [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+*  [![Handlebars][Handlebarsjs.com]][Handlebars-url]
+*  [![NodeJS][Node.js]][Nodejs-url]
+*  [![Sequelize][Sequelize]][Sequelize-url]
+*  [![MySQL][MySQL]][MySQL-url]
 
-* [![NodeJS]][Node-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![Handlebars][Handlebars.com]][Handlebars-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# safeMed - Electronic Medication Admin Record Software
-  
+# safeMed - eMAR Software
+  ![safeMed Logo](./public/img/safeMed-icon.png "safeMed Logo")
   ## Description
     Our application is here to help transform technology in the healthcare field.
-    safeMed is a unqiue eMAR database application that will help increase the productivty and
-    performance of healthcare workers such as Nurses, Medical Doctors, and Pharmacist
-    while working safely to manage patient medications. 
+    safeMed is a unqiue Electronic Medication Admin Record database application that will help 
+    increase the productivty and performance of healthcare workers such as Nurses, Medical Doctors, and 
+    Pharmacist while working safely to manage patient medications. 
     
     Our application provides a safe and secure collaboration between interdisciplinary teams within 
     facilities eg. Hospitals, Nursing Homes, and Outpatient. Some of the technologies used to build safeMed 
@@ -32,11 +31,12 @@
 - [Questions](#questions)
 
   ## Screenshots
+   ![safeMed Excalidraw](./public/img/safeMedexcalidraw.png "Excalidraw Mockup")
 
   ## Installation
-  Step 1: This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
-  Step 2: Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
-  Step 3: Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
+  - This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
+  - Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
+  - Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
 
   ## Usage
   
@@ -53,9 +53,13 @@
   ## Tests
   
 
-![Node.js](./public/img/nodedotjs.svg "Node.js")
-[Node-url]: https://https://nodejs.org/
-[Handlebars]: https://img.shields.io/badge/Handlebars-Handlebars-blue
+[Handlebarsjs.com]: https://img.shields.io/badge/Handlebars-Handlebars-blue
 [Handlebars-url]: https://handlebarsjs.com/
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-Bootstap-brightgreen
 [Bootstrap-url]: https://getbootstrap.com
+[Nodejs-url]: https://nodejs.org/en/ 
+[Node.js]: https://img.shields.io/badge/NodeJS-NodeJS-green
+[MySQL-url]: https://www.mysql.com/
+[MySQL]: https://img.shields.io/badge/mySql-mySql-lightgrey
+[Sequelize-url]: https://sequelize.org/
+[Sequelize]: https://img.shields.io/badge/Sequelize-Sequelize-orange
