@@ -8,5 +8,35 @@
         "date_started": "09/10/2022",
         "date_ended": "11/10/2022",
         "deleted_at": "11/11/2022"
+    },
+    {
+        "patient_id": "2",
+        "med_given": "Omeprazole",
+        "quantity": "20",
+        "dose": "40",
+        "dispense_date": "10/20/2019",
+        "date_started": "10/21/2019",
+        "date_ended": "12/15/2022",
+        "deleted_at": "12/15/2022"
+    },
+    {
+        "patient_id": "3",
+        "med_given": "Helium",
+        "quantity": "4",
+        "dose": "1",
+        "dispense_date": "04/15/2015",
+        "date_started": "04/16/2015",
+        "date_ended": "09/19/2015",
+        "deleted_at": "09/19/2015"
+    },
+    {
+        "patient_id": "4",
+        "med_given": "Asprin",
+        "quantity": "220",
+        "dose": "162",
+        "dispense_date": "03/20/2020",
+        "date_started": "03/21/2020",
+        "date_ended": "10/10/2022",
+        "deleted_at": "10/14/2022"
     }
 ]
