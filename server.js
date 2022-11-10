@@ -1,80 +1,24 @@
 const express = require('express');
-const sequelize = require ('./config/connection');
+const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = 3001;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {
-    maxAge: 24 * 60 * 60 * 1000,
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
-};
+// TODO: Invoke app.use() and serve static files from the '/public' folder
+app.use(express.static('public'));
 
-app.use(session(sess));
+// app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
 
-const hbs = exphbs.create({ helpers });
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+);
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// TODO: Create a route that will serve up the `public/paths.html` page
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.get('/paths', (req, res) =>
+//   res.sendFile(path.join(__dirname, 'public/paths.html'))
+// );
 
-app.use(routes);
-
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
-
-// const path = require('path');
-// const express = require('express');
-// const session = require('express-session');
-// const exphbs = require('express-handlebars');
-
-// const routes = require('./controllers');
-// const sequelize = require('./config/connection');
-// const helpers = require('./utils/helpers');
-// const { Sequelize } = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-// const app = express();
-// const PORT = process.env.PORT || 3001;
-
-// const sess = {
-//     secret: 'Super secret secret',
-//     cookie: {
-//         maxAge: 24 * 60 * 60 * 1000,
-//     },
-//     resave: false,
-//     saveUninitialized: true,
-//     store: new SequelizeStore({
-//         db: sequelize,
-//     }),
-// };
-
-// app.use(session(sess));
-
-// const hbs = exphbs.create({ helpers });
-
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use(routes);
-
-// sequelize.sync({ force: false }).then(() => {
-//     app.listen(PORT, () => console.log('Now listening'));
-// });
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}`)
+);

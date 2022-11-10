@@ -26,8 +26,16 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bootstrap": "^5.2.2",
+=======
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+>>>>>>> d7e3e1d6cf72f89b0980eed907457f7d15547a37
     "express": "^4.18.2",
-    "mysql2": "^2.3.3"
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.5"
   }
 }
