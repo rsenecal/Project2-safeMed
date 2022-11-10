@@ -11,12 +11,12 @@ router.post('/', async (req, res) => {
     req.body
   );
   // add user info to the session
-//   req.session.save(()=> {
-//     req.session.loggedIn = true;
-//     req.session.userId = user.id;
+  req.session.save(()=> {
+    req.session.loggedIn = true;
+    req.session.userId = user.id;
     res.json(user);
   });
-// });
+});
 
 // POST /api/users/login - logs a user in
 router.post('/login', async (req, res) => {
