@@ -1,16 +1,14 @@
 ### Built With
 *  [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-*  [![Handlebars][Handlebars.com]][Handlebars-url]
+*  [![Handlebars][Handlebarsjs.com]][Handlebars-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# safeMed - Electronic Medication Admin Record Software
+# safeMed - eMAR Software
   
   ## Description
     Our application is here to help transform technology in the healthcare field.
-    safeMed is a unqiue eMAR database application that will help increase the productivty and
-    performance of healthcare workers such as Nurses, Medical Doctors, and Pharmacist
-    while working safely to manage patient medications. 
+    safeMed is a unqiue Electronic Medication Admin Record database application that will help 
+    increase the productivty and performance of healthcare workers such as Nurses, Medical Doctors, and 
+    Pharmacist while working safely to manage patient medications. 
     
     Our application provides a safe and secure collaboration between interdisciplinary teams within 
     facilities eg. Hospitals, Nursing Homes, and Outpatient. Some of the technologies used to build safeMed 
@@ -53,6 +51,5 @@
 
 [Handlebarsjs.com]: https://img.shields.io/badge/Handlebars-Handlebars-blue
 [Handlebars-url]: https://handlebarsjs.com/
-
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
