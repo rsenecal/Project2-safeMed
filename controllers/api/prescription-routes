@@ -1,0 +1,46 @@
+const { Prescription } = require('../../models');
+const router = require('express').Router();
+
+// get all Prescriptions
+router.get('/', async (req, res) => {
+  try {
+    const prescriptions = await Prescription.findAll({
+
+    //   where: {
+    //     patient_id: req.session.patientId,
+    //   },
+    });
+    res.status(200).json(prescriptions);
+  } catch (err) {
+    res
+      .status(400)
+      .json({ err, msg: 'Something is not right' });
+  }
+});
+// get prescription by id
+router.get('/:prescriptionId', async (req, res) => {
+  try {
+    const prescription = await Prescription.findOne({
+      where: {
+        id: req.params.prescriptionId,
+      },
+    });
+
+    if (!prescription) {
+      return res.status(404).json({
+        msg: 'No patient with this id',
+      });
+    }
+
+    res.status(200).json(prescription);
+  } catch (err) {
+    res.status(500).json({
+      err,
+      msg: 'server error',
+    });
+  }
+});
+
+
+
+module.exports = router;
