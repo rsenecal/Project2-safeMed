@@ -25,7 +25,7 @@ router.get('/:patientId', async (req, res) => {
   try {
     const patient = await Patient.findOne({
       where: {
-        id: req.params.patient,
+        id: req.params.patientId,
         // user_id: req.session.userId,
       },
     });
@@ -86,7 +86,7 @@ router.put('/:patientId', async (req, res) => {
 // delete a patient by ID
 router.delete('/:patientId', async (req, res) => {
   try {
-    const destroyedTodo = await Patient.destroy({
+    const destroyedPatient = await Patient.destroy({
       where: {
         id: req.params.patientId,
         // user_id: req.session.userId,
