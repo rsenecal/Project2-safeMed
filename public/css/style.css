@@ -2,14 +2,36 @@ body {
     background-color: lightblue;
   }
   
-  h1 {
+  /* h1 {
     color: white;
     text-align: center;
   }
   
   .custom-bg-primary {
     background-color: #84b556;
+  } */
+
+  .highlight-word {
+    position: relative;
+    z-index: 0;
+  /* prevent the highlight from breaking since it is horizontal   */
+    white-space: nowrap;
   }
+  .highlight-word:before {
+      content: '';
+      background: url(https://cdn2.hubspot.net/hubfs/1951809/text-highlight.png?t=1542708765973) no-repeat center center;
+      background-size: 100% auto;
+      width: 108%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      transform: translate(-3%,0);
+  }
+
+  .jumbotron {
+    background-color: #84b556;
+}
 
   /* login.handlebars */
   .usernameAndPassword input{
