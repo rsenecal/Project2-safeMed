@@ -1,12 +1,50 @@
 [
     {
+        "first_name": "Bruce",
+        "last_name": "Wayne",
+        "email": "robinsmysidekick@gmail.com",
         "dob": "01/01/2000 ",
-        "height": "64",
-        "weight": "120",
-        "email": "samuel@gmail.com",
+        "height": "74",
+        "weight": "220",
         "address": "123 Elm Ave",
-        "city": "Queens",
+        "city": "Gotham",
         "state": "New York",
         "postal_code": "11111"
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Myers",
+        "email": "baddecisions@gmail.com",
+        "dob": "08/25/1982",
+        "height": "78",
+        "weight": "150",
+        "address": "789 Cannibal Way",
+        "city": "Hartford",
+        "state": "Connecticut",
+        "postal_code": "06101"
+    },
+    {
+        "first_name": "Penny",
+        "last_name": "Wise",
+        "email": "timetofloat@gmail.com",
+        "dob": "04/21/1956",
+        "height": "74",
+        "weight": "180",
+        "address": "48 Georgie Lane",
+        "city": "Popcorn",
+        "state": "Indiana",
+        "postal_code": "47462"
+    },
+    {
+        "first_name": "Wade",
+        "last_name": "Wilson",
+        "email": "regneratingdegenerate@gmail.com",
+        "dob": "09/13/2000",
+        "height": "82",
+        "weight": "200",
+        "address": "80 Fat Gandalf Way",
+        "city": "Georgia",
+        "state": "Atlanta",
+        "postal_code": "30301"
     }
 ]
