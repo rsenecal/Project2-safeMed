@@ -1,12 +1,9 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const sequelize = require('./config/connection');
 
-<<<<<<< HEAD
-=======
 const session = require('express-session');
 
->>>>>>> 2ca234d126dac794e7329ab33abfcdeeadc94372
 const routes = require('./controllers');
 
 const exphbs = require('express-handlebars');
@@ -24,7 +21,7 @@ const sess = {
 app.use(session(sess));
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 const hbs = exphbs.create();
 
 app.engine('handlebars', hbs.engine);
@@ -36,15 +33,15 @@ app.use(express.static('public'));
 app.use(routes);
 
 // Leave these for now, I may need them later -Jeff
-app.use(
-  '/css',
-  express.static(path.join(_dirname, 'node_modules/bootstrap/dist/css'))
-);
-app.use(
-  '/js',
-  express.static(path.join(_dirname, 'node_modules/bootstrap/dist/js'))
-);
-app.use('/js', express.static(path.join(_dirname, 'node_modules/jquery/dist')));
+// app.use(
+//   '/css',
+//   express.static(path.join(_dirname, 'node_modules/bootstrap/dist/css'))
+// );
+// app.use(
+//   '/js',
+//   express.static(path.join(_dirname, 'node_modules/bootstrap/dist/js'))
+// );
+// app.use('/js', express.static(path.join(_dirname, 'node_modules/jquery/dist')));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
@@ -55,8 +52,5 @@ sequelize.sync({ force: false }).then(() => {
 // app.listen(PORT, () =>
 //   console.log(`Example app listening at http://localhost:${PORT}`)
 // );
-<<<<<<< HEAD
-=======
 // app.get('/', (req, res) =>
 //   res.sendFile(path.join(__dirname, 'public/index.html')))
->>>>>>> 2ca234d126dac794e7329ab33abfcdeeadc94372

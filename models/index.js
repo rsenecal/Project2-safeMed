@@ -2,7 +2,7 @@ const User = require('./User');
 const Patient = require('./Patient');
 const Prescription = require('./Prescription');
 const PresHistory = require('./PresHistory');
-const Med = require('./Med');
+const Med = require('./med');
 
 User.hasMany(Patient, {
   foreignKey: 'user_id',
