@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { checkAuth } = require('../../middlewares/authMiddleware');
 const userRoutes = require('./user-routes');
-const patientRoutes = require('./patientRoutes');
-const medRoutes = require('./medRoutes');
+const patientRoutes = require('./patient-routes');
+const medRoutes = require('./med-routes');
+const prescriptionRoutes = require('./prescription-routes');
 
 router.use('/users', userRoutes);
 //  *** Once login is working Uncomment the line below ***
@@ -10,6 +11,8 @@ router.use('/users', userRoutes);
 
 // ***** Once user login is working comment the line below. ****
 router.use('/patients', patientRoutes);
+router.use('/prescriptions', prescriptionRoutes);
+
 router.use('/meds', medRoutes);
 
 module.exports = router;

@@ -1,8 +1,7 @@
 const User = require('./User');
 const Patient = require('./Patient');
 const Prescription = require('./Prescription');
-// const PresHistory = require('./PresHistory');
-const Med = require('./med');
+const Med = require('./Med');
 
 User.belongsToMany(Patient, {
   through:{
@@ -37,7 +36,7 @@ Patient.belongsTo(User, {
 
 Patient.hasMany(Prescription, {
   foreignKey: 'patient_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'SET NULL',
 });
 
 Prescription.belongsTo(Patient, {

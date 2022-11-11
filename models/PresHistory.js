@@ -11,13 +11,13 @@ PresHistory.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    prescription_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'prescription',
-        key: 'id',
-      },
-    },
+    // prescription_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'prescription',
+    //     key: 'id',
+    //   },
+    // },
     created_at: {
       type: DataTypes.DATE,
       allowNull: false,
