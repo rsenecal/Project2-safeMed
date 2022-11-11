@@ -1,20 +1,29 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="./js/login.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>safeMed</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  {{!-- Header --}}
+  <header class="header">
+    <img src="/public/img/image.png">
+    <h1 id="safeMedTitle">SAFEMED</h1>
+  </header>
+  {{!-- Login --}}
+  <form class="usernameAndPassword">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="username">
+      <label for="username">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password">
+      <label for="password">Password</label>
+    </div>
+    <button type="submit" value="Submit" id="submitButton">ENTER</button>
+  </form>
+</body>
+</html>
