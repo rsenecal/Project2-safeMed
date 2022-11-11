@@ -5,7 +5,12 @@ class Patient extends Model { }
 
 Patient.init(
   {
-
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,12 +26,6 @@ Patient.init(
       validate: {
         isEmail: true,
       },
-    },
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
     dob: {
       type: DataTypes.DATE,
