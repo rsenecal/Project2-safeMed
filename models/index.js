@@ -15,7 +15,7 @@ Patient.belongsTo(User, {
 
 Patient.hasMany(Prescription, {
   foreignKey: 'patient_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'SET NULL',
 });
 
 Prescription.belongsTo(Patient, {

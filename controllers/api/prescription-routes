@@ -85,12 +85,12 @@ router.delete('/:prescriptionId', async (req, res) => {
         id: req.params.prescriptionId,
       },
     });
-    if (!destroyedPrecription) {
-      return res.status(404).json({
-        msg: 'the patient with this id was not found (for this user)',
-      });
-    }
-    res.status(200).json(destroyedPatient);
+    // if (!destroyedPrescription) {
+    //   return res.status(404).json({
+    //     msg: 'the prescription with this id was not found (for this patient)',
+    //   });
+    // }
+    res.status(200).json(destroyedPrescription);
   } catch (err) {
     res.status(500).json(err);
   }
