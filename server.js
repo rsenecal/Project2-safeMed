@@ -30,18 +30,25 @@ app.set('view engine', 'handlebars');
 // TODO: Invoke app.use() and serve static files from the '/public' folder
 app.use(express.static('public'));
 
-app.use(routes);
-
 // Leave these for now, I may need them later -Jeff
-// app.use(
-//   '/css',
-//   express.static(path.join(_dirname, 'node_modules/bootstrap/dist/css'))
-// );
-// app.use(
-//   '/js',
-//   express.static(path.join(_dirname, 'node_modules/bootstrap/dist/js'))
-// );
-// app.use('/js', express.static(path.join(_dirname, 'node_modules/jquery/dist')));
+app.use(
+  '/css',
+  express.static(
+    path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css')
+  )
+);
+app.use(
+  '/jquery',
+  express.static(
+    path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'js')
+  )
+);
+app.use(
+  '/js',
+  express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist'))
+);
+
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
