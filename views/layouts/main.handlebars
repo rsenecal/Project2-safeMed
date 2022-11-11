@@ -3,50 +3,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>safeMed</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../public/css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  {{!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
 </head>
 <body>
-
-
-<div class="jumbotron">
-  <div class="container text-center text-lg-left">
-    
-    <div class="row">
-      <div class="col-lg-8">
-          <h1 class="display-4">safeMed
-<span class="highlight-word">Protection your patients and Business.</span></h1>
-  <p class="lead">When it comes to making sure your patients get the correct med and dosage. safeMed is the only option.</p>
-        <span class="text-center d-inline-block">
-          <a class="btn btn-primary btn-lg w-100" href="#" role="button">Try it free</a>
-        <p class="text-muted">No credit card required</p>
-        </span>
-        
+  <header id="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <img id="icon-img" src="./img/safeMed-icon.png" alt="" width="60" height="60" class="d-inline-block align-text-top"> 
+        </div>
+        <div class="navbar-title" class="text-light">safeMed</div>
+        <div id="nav-btn-container" class="navbar-nav">
+          <button type="button" class="btn btn-primary mx-1">Dashboard</button>
+          {{#if loggedIn}}
+          <button id="logout-btn" type="button" class="btn btn-primary mx-1">Logout</button>
+          {{else}}
+          <button id="login-btn" type="button" class="btn btn-primary mx-1">Login</button>
+          {{/if}}
+        </div>
       </div>
-      <div class="col-lg-4 align-items-center d-flex">
-        <img src="https://karmasoft2-logo.s3.amazonaws.com/safemed-logo-300x200.png" alt="" class="img-fluid">
-      </div>
-    </div>
-
-    </div>
-</div>
-
-<div class="container">
-
+    </nav>
+  </header>
   {{{body}}}
-  </div>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/jquery/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>
-
-
-{{!-- 
- --}}
-
-   {{!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> --}}
