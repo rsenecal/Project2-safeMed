@@ -1,0 +1,30 @@
+<section class="py-2">
+  <div class="row">
+    <div class="col-md-6 text-center">
+        <h1 class="display-3 mt-3 pt-5">
+          safeMed
+        </h1>
+        <p class="lead">
+            Protection for your patients and Business.
+            $15 / Month
+            </p>
+        <form action="/charge" method="POST">
+          <script 
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripePublishableKey }}"
+            {{!-- data-amount="2500" --}}
+            data-name="safeMed Basic"
+            data-description="Use '4242 4242 4242 4242' for card #" data-image="/img/marketplace.png"
+            data-locale="auto">
+          </script>
+          <script>
+            // Hide default stripe button
+            document.getElementsByClassName('stripe-button-el')[0].style.display='none';
+          </script>
+          <button type="submit" class="btn btn-outline-dark text-green btn-lg">Purchase</button>
+        </form><br>
+    </div>
+    <div class="col-md-6">
+      <img src="/img/book.png" class="rounded mx-auto d-block" alt="">
+    </div>
+  </div>
+</section>
