@@ -1,0 +1,37 @@
+<main>
+<div class="container-xl">
+<div class="row align-items-center g-lg-5 py-5">
+    <h2>All Patients</h2>
+</div>
+
+<table class="table">
+<thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Email</th>
+    <th scope="col">Action</th>
+    </tr>
+</thead>
+    {{#each patients as |patient|}} 
+<tbody>
+
+ <tr>
+    <th scope="row">1</th>
+  <td class="pt-fname">{{patient.first_name}}</td>
+    
+    {{!-- <td class="pt-lname">{{patient.last_name}}</td> --}}
+    {{!-- <td class="pt-age">84</td>
+    <td class="pt-email">mdo@gmail.com</td>
+    <td class="chart-action">Edit Delete Reassign</td> --}}
+    </tr>
+
+</tbody>
+</table>
+{{!-- {{/each }}  --}}
+
+</div>
+
+</main>
