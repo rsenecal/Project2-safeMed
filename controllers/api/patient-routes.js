@@ -5,14 +5,19 @@ const router = require('express').Router();
 // get all Patients
 router.get('/', async (req, res) => {
   try {
-    const patients = await Patient.findAll({
+    const patientData = await Patient.findAll({
     // *** We need a where clause if we create a relationship between patients and uer
     //  Currently patient is not link to user.
     //   where: {
     //     user_id: req.session.userId,
     //   },
     });
-    res.status(200).json(patients);
+    const patients = patientData.map((patient) =>
+      patient.get({ plain: true })
+    );
+    res.render('patients', {patients})
+    // res.status(200).json(patients);
+
   } catch (err) {
     res
       .status(400)
