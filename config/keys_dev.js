@@ -1,0 +1,7 @@
+module.exports = {
+  stripePublishableKey:'pk_test_51M34BwJ206BF34Y8du4467G6Ip0lrKkXQlcpbUDY1s3u2Z0vom0cwgwDvFTPkut14QBFBg7OH038JeYNI3FJ8odd00VNLfrEBq',
+  stripeSecretKey:'sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp'
+};
+
+
+// const stripe = Stripe('pk_test_51M34BwJ206BF34Y8du4467G6Ip0lrKkXQlcpbUDY1s3u2Z0vom0cwgwDvFTPkut14QBFBg7OH038JeYNI3FJ8odd00VNLfrEBq'); // Your Publishable Key
