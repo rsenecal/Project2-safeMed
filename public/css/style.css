@@ -2,10 +2,21 @@
   --primary-color: #7cbc54;
   --secondary-color: #4c7c34;
   --tertiary-color:	#ff9900;
-  --nav-btn-dark: #3c642c;
-  --light: #f8f9fa;
+  --btn-dark: #3c642c;
+  --cream: #FFFFF6;
 }
 
+html, 
+body {
+  height: 100vh;
+}
+
+/* main elemetn styles */
+#homepage-main {
+  height: 100%;
+}
+
+/* Navbar Styles */
 #main-header .navbar {
   background-color: var(--primary-color) !important;
 }
@@ -15,27 +26,49 @@
   border-radius: 5px;
 }
 
+
 /* Button Styles */
 .navbar-title {
-  color: var(--light);
+  color: var(--cream);
   font-size: 3rem;
   text-shadow: 1px 1px 2px var(--secondary-color);
 }
 
 #nav-btn-container .btn-primary {
-  background-color: var(--nav-btn-dark);
-  border-color: var(--nav-btn-dark);
+  background-color: var(--btn-dark);
+  border: 2px solid var(--btn-dark);
   font-size: 1.2rem;
 }
 
 #btn-sign-up {
-  background-color: var(--secondary-color);
-  border: 3px solid var(--secondary-color);
-  font-size: 1.2rem;
+  background-color: var(--btn-dark);
+  border: 2px solid var(--btn-dark);
+  color: var(--cream);
+  font-size: 1.4rem;
 }
 
 #nav-btn-container .btn-primary:hover,
 #btn-sign-up:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;
+}
+
+/* Main Content Styles */
+main {
+  background-color: var(--cream);
+}
+
+/* Form Styles */
+#sign-up-form {
+  border: 1px solid var(--tertiary-color);
+  background-color: var(--primary-color);
+}
+
+#sign-up-form input {
+  background-color: var(--cream);
+  box-shadow: none;
+}
+
+#sign-up-form input:focus {
+  border: 1px solid var(--tertiary-color);
 }

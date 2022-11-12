@@ -39,7 +39,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // TODO: Invoke app.use() and serve static files from the '/public' folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Leave these for now, I may need them later -Jeff
 app.use(
@@ -49,13 +49,13 @@ app.use(
   )
 );
 app.use(
-  '/jquery',
+  '/js',
   express.static(
     path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'js')
   )
 );
 app.use(
-  '/js',
+  '/jquery',
   express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist'))
 );
 
