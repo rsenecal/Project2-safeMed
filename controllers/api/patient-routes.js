@@ -6,22 +6,17 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
   try {
     const patientData = await Patient.findAll({
-    // *** We need a where clause if we create a relationship between patients and uer
-    //  Currently patient is not link to user.
-    //   where: {
-    //     user_id: req.session.userId,
-    //   },
+      // *** We need a where clause if we create a relationship between patients and uer
+      //  Currently patient is not link to user.
+      //   where: {
+      //     user_id: req.session.userId,
+      //   },
     });
-    const patients = patientData.map((patient) =>
-      patient.get({ plain: true })
-    );
-    res.render('patients', {patients})
+    const patients = patientData.map((patient) => patient.get({ plain: true }));
+    res.render('patients', { patients });
     // res.status(200).json(patients);
-
   } catch (err) {
-    res
-      .status(400)
-      .json({ err, msg: 'Something is not right' });
+    res.status(400).json({ err, msg: 'Something is not right' });
   }
 });
 
@@ -55,7 +50,7 @@ router.post('/', async (req, res) => {
   try {
     const addPatient = await Patient.create({
       ...req.body,
-    //   user_id: req.session.userId,
+      //   user_id: req.session.userId,
     });
     res.status(200).json(addPatient);
   } catch (err) {
@@ -73,7 +68,7 @@ router.put('/:patientId', async (req, res) => {
       {
         where: {
           id: req.params.patientId,
-        //   user_id: req.session.userId,
+          //   user_id: req.session.userId,
         },
       }
     );

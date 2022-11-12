@@ -2,30 +2,31 @@ const User = require('./User');
 const Patient = require('./Patient');
 const Prescription = require('./Prescription');
 const Med = require('./Med');
+const PotentialCustomer = require('./PotentialCustomer');
 
 User.belongsToMany(Patient, {
-  through:{
+  through: {
     model: Prescription,
-    unique: false
-  }
+    unique: false,
+  },
   // foreignKey: 'user_id',
   // onDelete: 'CASCADE',
 });
 
 Med.belongsToMany(Patient, {
-  through:{
+  through: {
     model: Prescription,
-    unique: false
-  }
+    unique: false,
+  },
   // foreignKey: 'user_id',
   // onDelete: 'CASCADE',
 });
 
 Patient.belongsToMany(Med, {
-  through:{
+  through: {
     model: Prescription,
-    unique: false
-  }
+    unique: false,
+  },
   // foreignKey: 'user_id',
   // onDelete: 'CASCADE',
 });
@@ -59,7 +60,6 @@ Prescription.belongsTo(Patient, {
 // }
 // );
 
-
-module.exports = { User, Patient, Prescription, Med };
+module.exports = { User, Patient, Prescription, Med, PotentialCustomer };
 
 // module.exports = { User, Patient, Prescription, PresHistory, Med };
