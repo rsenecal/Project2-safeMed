@@ -16,6 +16,6 @@ router.use('/prescriptions', prescriptionRoutes);
 
 router.use('/meds', medRoutes);
 
-router.user('/customers', potentialCustomerRoutes);
+router.use('/customers', potentialCustomerRoutes);
 
 module.exports = router;

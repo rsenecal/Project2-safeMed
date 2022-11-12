@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET api/customers/:id
+// GET api/customers/:id - get one potential customer
 router.get('/:id', async (req, res) => {
   try {
     const customer = await PotentialCustomer.findOne({
@@ -44,6 +44,25 @@ router.post('/', async (req, res) => {
       ...req.body,
     });
     res.status(200).json(customerAdded);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// DELETE api/customers - add new potential customer
+router.delete('/:id', async (req, res) => {
+  try {
+    const destroyedCustomer = await PotentialCustomer.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!destroyedCustomer) {
+      return res.status(404).json({
+        msg: 'the Potential customer with this id was not found (for this user)',
+      });
+    }
+    res.status(200).json(destroyedCustomer);
   } catch (err) {
     res.status(500).json(err);
   }
