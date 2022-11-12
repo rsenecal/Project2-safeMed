@@ -4,6 +4,7 @@ const userRoutes = require('./user-routes');
 const patientRoutes = require('./patient-routes');
 const medRoutes = require('./med-routes');
 const prescriptionRoutes = require('./prescription-routes');
+const potentialCustomerRoutes = require('./potential-customer-routes');
 
 router.use('/users', userRoutes);
 //  *** Once login is working Uncomment the line below ***
@@ -14,5 +15,7 @@ router.use('/patients', patientRoutes);
 router.use('/prescriptions', prescriptionRoutes);
 
 router.use('/meds', medRoutes);
+
+router.user('/customers', potentialCustomerRoutes);
 
 module.exports = router;
