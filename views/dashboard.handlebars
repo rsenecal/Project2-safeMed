@@ -1,0 +1,134 @@
+     {{!-- HEADER --}}
+                <div class="row justify-content-md-center">
+			<div class="col-xl-5 col-lg-6 col-md-8">
+				<div class="section-title text-center title-ex1">
+					<h2>Dashboard</h2>
+				</div>
+			</div>
+{{!-- ASIDE SECTION --}}
+<div class="container bootstrap snippets bootdey">
+<div class="row ng-scope">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <h3 class="m0 text-bold">Medical Professional</h3>
+                <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Contact"></div>
+                <td><span class="badge badge-soft-success mb-2 fs-3">Nurse</span></td>
+                <div class="mv-lg">
+                    <p>Name:</p>
+                    <p>Phone:</p>
+                    <p>Email:</p>
+                </div>
+                <div id="btn-logout"><a class="btn btn-sm" href="/">Logout</a></div>
+            </div>
+        </div>
+        <div class="panel panel-default hidden-xs hidden-sm">
+            <div class="panel-heading">
+                <div class="panel-title text-center">Active Patients</div>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Contact"></a>
+                    </div>
+                    <div class="media-body pt-sm">
+                        <div class="text-bold">Floyd Ortiz
+                            <div class="text-sm text-muted">12m ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+           
+{{!-- PATIENT LIST SECTION--}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<div class="container">
+    
+    <div class="col-md-6 float-xxl-end">
+                <div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target=".add-new" class="btn btn-sm btn-light float-xxl-end"><i class="bx bx-plus me-1"></i>Add Patient</a>
+                </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <h5 class="card-title">Patient List</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table project-list-table table-nowrap align-middle table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="ps-4" style="width: 50px;">
+                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck" /><label class="form-check-label" for="contacusercheck"></label></div>
+                                </th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Height</th>
+                                <th scope="col">Email</th>
+                                <th scope="col" style="width: 200px;">Action</th>
+                            </tr>
+                        </thead>
+                          {{#each patients as |patient|}} 
+                        <tbody>
+                              <tr>
+                                <th scope="row" class="ps-4">
+                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck1" /><label class="form-check-label" for="contacusercheck1"></label></div>
+                                </th>
+                                <td class="pt-fname"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="avatar-sm rounded-circle me-2" />
+                                <a href="#" class="text-body">{{patient.first_name}}</a></td>
+                                <td class="pt-lname">{{patient.last_name}}</td>
+                                <td class="pt-dob">{{patient.dob}}</td>
+                                <td class="pt-age">{{patient.height}}</td>
+                                <td class="pt-email">{{patient.email}}</td>
+                                <td>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="px-2 text-primary"><i class="bx bx-pencil font-size-18"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {{/each }} 
+                    </table>
+                </div>
+        </div>
+    </div>
+    <div class="row g-0 align-items-center pb-4">
+        <div class="col-sm-6">
+            <div><p class="mb-sm-0">Showing 1 to 10 of 57 entries</p></div>
+        </div>
+        <div class="col-sm-6">
+            <div class="float-sm-end">
+                <ul class="pagination mb-sm-0">
+                    <li class="page-item disabled">
+                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item">
+                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
