@@ -28,4 +28,11 @@ router.get('/patients', async (req, res) => {
   }
 });
 
+
+//GET homepage
+router.get('/', (req, res) => {
+  res.render('patients', { layout: 'main' });
+  //render
+});
+
 module.exports = router;
