@@ -8,51 +8,39 @@
 				</div>
 			</div>
 		</div>
+
+         <script src="https://checkout.stripe.com/checkout.js" defer></script>
+
+         <script>
+            stripePublicKey = "{{ stripePublishableKey }}"
+         </script>  
+
+         <script src="pricing.js" defer></script>
+               
+       
+          
+
 		<!-- Pricing Table starts -->
 		<div class="row">
+            {{#each items.pricing }}
 			<div class="col-md-4">
-				<div class="price-card ">
-					<h2>Basic</h2>
+				<div class="price-card " data-price-id ="{{id}}">
+					<h2>{{pricePlan}}</h2>
 					<p>Per Host/ per Month</p>
-					<p class="price"><span>75</span>/ Month</p>
+					<p class="price" id="planPrice"><span>{{dollar price}}</span>/ Month</p>
 					<ul class="pricing-offers">
-						<li>Unlimited Patients</li>
-						<li>Unlimited staff</li>
-						<li>Care Take notes</li>
-						<li>Drescription History</li>
+						<li>{{feature1}}</li>
+						<li>{{feature2}}</li>
+						<li>{{feature3}}</li>
+						<li>{{feature4}}</li>
 					</ul>
-					<a href="#" class="btn btn-primary btn-mid">Buy Now</a>
+                    <button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan">Buy</button>
+
+					{{!-- <a href="#" class="btn btn-primary btn-mid">Buy Now</a> --}}
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="price-card featured">
-					<h2>Plus</h2>
-					<p>Per Host/ per Month</p>
-					<p class="price"><span>150</span>/ Month</p>
-					<ul class="pricing-offers">
-						<li>All Basic features</li>
-						<li>Multi-facility inventory tracking</li>
-						<li>Customize user access control</li>
-						<li>Reports and Activity tracking</li>
-					</ul>
-					<a href="#" class="btn btn-primary btn-mid">Buy Now</a>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="price-card ">
-					<h2>Premium</h2>
-					<p>Per Host/ per Month</p>
-					<p class="price"><span>500</span>/ Month</p>
-					<ul class="pricing-offers">
-						<li>All Plus features</li>
-						<li>API Integration with Pharmacies</li>
-						<li>Narcotics Tracking</li>
-						<li>Biometric Security</li>
-						<li>Powerful Admin Panel</li>
-					</ul>
-					<a href="#" class="btn btn-primary btn-mid">Buy Now</a>
-				</div>
-			</div>
+            {{/each}}
+			
 		</div>
 	</div>
 </section>
