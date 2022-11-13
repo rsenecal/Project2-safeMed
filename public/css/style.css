@@ -87,6 +87,114 @@ main {
   border: 1px solid var(--tertiary-color);
 }
 
+/*  LAYOUT STYLE FOR DASHBOARD & PATIENTS */
+#addpt-btn .btn {
+    background: var(--secondary-color);
+    color: var(--cream-color);
+  }
+
+#btn-logout .btn {
+    background: var(--secondary-color);
+    color: var(--cream-color);
+}
+body{
+  margin-top:20px;
+  background:#f5f7fa;
+}
+.panel.panel-default {
+  border-top-width: 3px;
+}
+.panel {
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.thumb96 {
+  width: 96px!important;
+  height: 96px!important;
+}
+.thumb48 {
+  width: 48px!important;
+  height: 48px!important;
+}
+
+body{margin-top:20px;
+  background-color:#eee;
+  }
+  .project-list-table {
+      border-collapse: separate;
+      border-spacing: 0 12px
+  }
+  
+  .project-list-table tr {
+      background-color: #fff
+  }
+  
+  .table-nowrap td, .table-nowrap th {
+      white-space: nowrap;
+  }
+  .table-borderless>:not(caption)>*>* {
+      border-bottom-width: 0;
+  }
+  .table>:not(caption)>*>* {
+      padding: 0.75rem 0.75rem;
+      background-color: var(--bs-table-bg);
+      border-bottom-width: 1px;
+      box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+  }
+  
+  .avatar-sm {
+      height: 2rem;
+      width: 2rem;
+  }
+  .rounded-circle {
+      border-radius: 50%!important;
+  }
+  .me-2 {
+      margin-right: 0.5rem!important;
+  }
+  img, svg {
+      vertical-align: middle;
+  }
+  
+  a {
+      color: #3b76e1;
+      text-decoration: none;
+  }
+  
+  .badge-soft-danger {
+      color: #f56e6e !important;
+      background-color: rgba(245,110,110,.1);
+  }
+  .badge-soft-success {
+      color: #63ad6f !important;
+      background-color: rgba(99,173,111,.1);
+  }
+  
+  .badge-soft-primary {
+      color: #3b76e1 !important;
+      background-color: rgba(59,118,225,.1);
+  }
+  
+  .badge-soft-info {
+      color: #57c9eb !important;
+      background-color: rgba(87,201,235,.1);
+  }
+  
+  .avatar-title {
+      align-items: center;
+      background-color: #3b76e1;
+      color: #fff;
+      display: flex;
+      font-weight: 500;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+  }
+  .bg-soft-primary {
+      background-color: rgba(59,118,225,.25)!important;
+  }
 /* login page styles */
 .med-professional-img img {
   border-radius: 50%;
@@ -283,3 +391,5 @@ ul li {
     line-height: 40px;
     padding: 0 20px;
 }
+
+
