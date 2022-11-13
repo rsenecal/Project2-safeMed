@@ -29,10 +29,22 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/', (req, res) => {
+  fs.readFile('price.json', function(error, data) {
+    if(error) {
+      res.status(500).end();
+    } else {
+      console.log('purchased');
+    }
+  });
+  //   console.log(items);
+}
+);
 
-router.get('/charge', (req, res) => {
-  res.render('stripecompleted',{layout: 'main'}, { stripePublishableKey: keys.stripePublishableKey });
-});
+
+// router.get('/charge', (req, res) => {
+//   res.render('stripecompleted',{layout: 'main'}, { stripePublishableKey: keys.stripePublishableKey });
+// });
 
 // Get all pricing for our price table page
 // router.post('/charge', (req, res) => {
