@@ -1,0 +1,14 @@
+[
+  {
+    "first_name": "Tony",
+    "last_name": "Stark",
+    "email": "iamironman@gmail.com",
+    "affiliation": "Avengers"
+  },
+  {
+    "first_name": "Danny",
+    "last_name": "Rand",
+    "email": "ironfist@gmail.com",
+    "affiliation": "Defenders"
+  }
+]

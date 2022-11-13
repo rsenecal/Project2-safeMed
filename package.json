@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
     "bootstrap": "^5.2.2",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
@@ -35,6 +37,7 @@
     "express-session": "^1.17.3",
     "jquery": "^3.6.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.5"
+    "sequelize": "^6.25.5",
+    "stripe": "^10.17.0"
   }
 }
