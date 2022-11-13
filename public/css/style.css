@@ -73,7 +73,6 @@ main {
   border: 1px solid var(--tertiary-color);
 }
 
-<<<<<<< HEAD
 /*  LAYOUT STYLE FOR DASHBOARD & PATIENTS */
 body{
   margin-top:20px;
@@ -173,7 +172,6 @@ body{margin-top:20px;
   .bg-soft-primary {
       background-color: rgba(59,118,225,.25)!important;
   }
-=======
 
 /* --- CSS FOR Pricing Table page  */
 body{margin-top:20px;}
@@ -358,4 +356,7 @@ ul li {
     line-height: 40px;
     padding: 0 20px;
 }
->>>>>>> 2fd7ccb3a86ca3170dd9d65225034540d4fd1c51
+
+.addpt-btn {
+  color:  var(--secondary-color);
+}

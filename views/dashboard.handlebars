@@ -48,22 +48,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
 <div class="container">
+    
+    <div class="col-md-6 float-xxl-end">
+                <div>
+                    <a href="#" data-bs-toggle="modal" data-bs-target=".add-new" class="addpt-btn float-xxl-end"><i class="bx bx-plus me-1"></i>Add Patient</a>
+                </div>
+    </div>
     <div class="row align-items-center">
         <div class="col-md-6">
             <div class="mb-3">
                 <h5 class="card-title">Patient List</h5>
             </div>
         </div>
-        <div class="col-md-6">
-                <div>
-                    <a href="#" data-bs-toggle="modal" data-bs-target=".add-new" class="btn btn-primary"><i class="bx bx-plus me-1"></i>Add Patient</a>
-                </div>
-            </div>
-        </div>
     </div>
+
     <div class="row">
         <div class="col-lg-12">
-            <div class="">
                 <div class="table-responsive">
                     <table class="table project-list-table table-nowrap align-middle table-borderless">
                         <thead>
@@ -99,28 +99,10 @@
                                     </ul>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck1" /><label class="form-check-label" for="contacusercheck1"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">Simon</a></td>
-                                <td>Ryles</td>
-                                <td>12/12/90</td>
-                                <td>5'9</td>
-                                <td>SimonRyles@minible.com</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="px-2 text-primary"><i class="bx bx-pencil font-size-18"></i></a>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
                         </tbody>
                         {{/each }} 
                     </table>
                 </div>
-            </div>
         </div>
     </div>
     <div class="row g-0 align-items-center pb-4">
@@ -144,7 +126,6 @@
         </div>
     </div>
 </div> 
-                <button class="btn btn-info" type="submit">Update</button>
                 </div>
             </div>
         </div>
