@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const sequelize = require('./config/connection');
@@ -12,16 +13,14 @@ const exphbs = require('express-handlebars');
 // const bodyParser = require('body-parser');
 // -----------------------------------------
 
-
 // ---------------------------------------
 const app = express();
-
 
 const PORT = process.env.PORT || 3001;
 
 //Set up sessions
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
 };

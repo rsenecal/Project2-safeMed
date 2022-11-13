@@ -2,8 +2,8 @@
   --primary-color: #7cbc54;
   --secondary-color: #4c7c34;
   --tertiary-color:	#ff9900;
-  --btn-dark: #3c642c;
-  --cream: #FFFFF6;
+  --dark-color: #3c642c;
+  --cream-color: #FFFFF6;
 }
 
 html, 
@@ -11,8 +11,25 @@ body {
   height: 100vh;
 }
 
+/* heading Styles */
+h1,
+h2,
+h3 {
+  color: var(--dark-color);
+}
+
+h1 {
+  text-shadow: 2px 2px 4px #8f8f8f;
+}
+
+/* h2,
+h3 {
+  color: black
+} */
+
 /* main elemetn styles */
-#homepage-main {
+main {
+  background-color: var(--cream-color);
   height: 100%;
 }
 
@@ -29,33 +46,30 @@ body {
 
 /* Button Styles */
 .navbar-title {
-  color: var(--cream);
+  color: var(--cream-color);
   font-size: 3rem;
   text-shadow: 1px 1px 2px var(--secondary-color);
 }
 
-#nav-btn-container .btn-primary {
-  background-color: var(--btn-dark);
-  border: 2px solid var(--btn-dark);
+#nav-btn-container .btn-primary,
+#user-card-container .btn-primary {
+  background-color: var(--dark-color);
+  border: 2px solid var(--dark-color);
   font-size: 1.2rem;
 }
 
 #btn-sign-up {
-  background-color: var(--btn-dark);
-  border: 2px solid var(--btn-dark);
-  color: var(--cream);
+  background-color: var(--dark-color);
+  border: px solid var(--dark-color);
+  color: var(--cream-color);
   font-size: 1.4rem;
 }
 
 #nav-btn-container .btn-primary:hover,
-#btn-sign-up:hover {
+#btn-sign-up:hover,
+#user-card-container .btn-primary:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;
-}
-
-/* Main Content Styles */
-main {
-  background-color: var(--cream);
 }
 
 /* Form Styles */
@@ -65,7 +79,7 @@ main {
 }
 
 #sign-up-form input {
-  background-color: var(--cream);
+  background-color: var(--cream-color);
   box-shadow: none;
 }
 
@@ -172,6 +186,18 @@ body{margin-top:20px;
   .bg-soft-primary {
       background-color: rgba(59,118,225,.25)!important;
   }
+/* login page styles */
+.med-professional-img img {
+  border-radius: 50%;
+  background-color: var(--tertiary-color);
+  border: 3px solid var(--dark-color);
+}
+
+#user-card-container > div {
+  border: 2px solid var(--dark-color);
+  box-shadow: 10px 5px 5px #eee;
+}
+
 
 /* --- CSS FOR Pricing Table page  */
 body{margin-top:20px;}

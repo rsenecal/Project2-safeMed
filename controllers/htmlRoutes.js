@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Patient } = require('../models');
+const { Patient, User } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
@@ -8,8 +8,15 @@ router.get('/', (req, res) => {
 });
 
 // GET /login - render login page
-router.get('/login', (req, res) => {
-  res.render('login', { layout: 'main' });
+router.get('/login', async (req, res) => {
+  try {
+    const userData = await User.findAll({});
+
+    const users = userData.map((user) => user.get({ plain: true }));
+    res.render('login', { users });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // GET /dashboard - render dashboard page
