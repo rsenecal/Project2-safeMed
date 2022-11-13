@@ -9,13 +9,10 @@
 			</div>
 		</div>
 
-         <script src="https://checkout.stripe.com/checkout.js" defer></script>
+         {{!-- <script src="https://checkout.stripe.com/checkout.js" defer></script> --}}
 
-         <script>
-            stripePublicKey = "{{ stripePublishableKey }}"
-         </script>  
-
-         <script src="pricing.js" defer></script>
+{{!-- 
+         <script src="pricing.js" defer></script> --}}
                
        
           
@@ -34,7 +31,7 @@
 						<li>{{feature3}}</li>
 						<li>{{feature4}}</li>
 					</ul>
-                    <button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan">Buy</button>
+                    <button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan{{id}}">Buy</button>
 
 					{{!-- <a href="#" class="btn btn-primary btn-mid">Buy Now</a> --}}
 				</div>
@@ -44,3 +41,9 @@
 		</div>
 	</div>
 </section>
+
+<script src="https://checkout.stripe.com/checkout.js" defer></script>
+<script>
+    stripePublicKey = "{{ stripePublishableKey }}"
+</script>  
+<script src="./js/pricing.js" defer></script>
