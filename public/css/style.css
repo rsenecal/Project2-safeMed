@@ -88,6 +88,15 @@ main {
 }
 
 /*  LAYOUT STYLE FOR DASHBOARD & PATIENTS */
+#addpt-btn .btn {
+    background: var(--secondary-color);
+    color: var(--cream-color);
+  }
+
+#btn-logout .btn {
+    background: var(--secondary-color);
+    color: var(--cream-color);
+}
 body{
   margin-top:20px;
   background:#f5f7fa;
@@ -383,6 +392,4 @@ ul li {
     padding: 0 20px;
 }
 
-.addpt-btn {
-  color:  var(--secondary-color);
-}
+
