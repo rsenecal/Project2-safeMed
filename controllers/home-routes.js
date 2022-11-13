@@ -20,9 +20,7 @@ router.get('/patients', async (req, res) => {
     const patients = patientData.map((patient) =>
       patient.get({ plain: true })
     );
-    res.render('patients', {patients})
-    // res.status(200).json(patients);
-
+    res.render('patients', {patients});
   } catch (err) {
     res
       .status(400)
