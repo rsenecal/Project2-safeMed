@@ -33,7 +33,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Add for stripe.com integration
 // app.use(bodyParser.urlencoded({ extended: true }));
-const hbs = exphbs.create();
+const hbs = exphbs.create({
+  mainLayout: 'main.handlebars',
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

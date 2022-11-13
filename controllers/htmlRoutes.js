@@ -13,12 +13,7 @@ router.get('/login', (req, res) => {
 });
 
 // GET /dashboard - render dashboard page
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard', { layout: 'main' });
-});
-
-// GET /patients - render all patients associated with user
-router.get('/patients', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   try {
     const patientData = await Patient.findAll({
       // *** We need a where clause if we create a relationship between patients and uer
@@ -28,7 +23,7 @@ router.get('/patients', async (req, res) => {
       //   },
     });
     const patients = patientData.map((patient) => patient.get({ plain: true }));
-    res.render('patients', { patients });
+    res.render('dashboard', { patients });
     // res.status(200).json(patients);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
