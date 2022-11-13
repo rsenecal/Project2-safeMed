@@ -1,0 +1,31 @@
+{
+    "pricing": [
+        {
+            "id": 1,
+            "pricePlan": "Basic",
+            "price":7500,
+            "feature1":"Unlimited Patients",
+            "feature2":"Drescription History",
+            "feature3":"Care Take notes",
+            "feature4":"Drescription History"
+        },
+        {
+            "id": 2,
+            "pricePlan": "Plus",
+            "price":15000,
+            "feature1":"All Basic features",
+            "feature2":"Multi-facility inventory tracking",
+            "feature3":"Customize user access control",
+            "feature4":"Reports and Activity tracking"
+        },
+        {
+            "id": 3,
+            "pricePlan": "Premium",
+            "price":50000,
+            "feature1":"All Plus features",
+            "feature2":"API Integration with Pharmacies",
+            "feature3":"Narcotics Tracking",
+            "feature4":"Biometric Security"
+        }
+    ]
+}
