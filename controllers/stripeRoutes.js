@@ -18,10 +18,10 @@ router.get('/', (req, res) => {
     } else {
       res.render('stripepage', {
         stripePublishableKey: keys.stripePublishableKey,
-        items: JSON.parse(data),
-        helpers: {
-          dollar: (cents) => cents/100
-        }
+        items: JSON.parse(data)
+        // helpers: {
+        //   dollar: (cents) => cents/100
+        // }
       });
     //   console.log(items);
     }

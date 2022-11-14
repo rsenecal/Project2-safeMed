@@ -6,6 +6,24 @@ router.get('/', async (req, res) => {
   try {
     const prescriptions = await Prescription.findAll({
 
+      // include: [
+      //   {
+      //     model: Patient,
+      //     attributes: [
+      //       'first_name',
+      //       'Last_name',
+      //     ],
+      //   }
+      // {
+      //   model: Med,
+      //   attributes: [
+      //     'name',
+      //     'maker',
+      //   ],
+      // },
+
+      // ],
+
     //   where: {
     //     patient_id: req.session.patientId,
     //   },
