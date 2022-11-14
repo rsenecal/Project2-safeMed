@@ -57,7 +57,6 @@ router.get('/patientmeds', async (req, res) => {
       //     patient_id: req.session.userId,
       //   },
     });
-<<<<<<< HEAD
     const prescriptions = prescriptiontData.map((prescription) =>
       prescription.get({ plain: true })
     );
@@ -66,12 +65,10 @@ router.get('/patientmeds', async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
     // res.status(200).json(patients);
-=======
     const patientmeds = patientData.map((patient) => patient.get({ plain: true }));
     // console.dir (patientmeds[1].Meds[0]);
     res.render('patientmeds', { patientmeds });
     // res.status(200).json(patientmeds);
->>>>>>> 397092a2f3ddd2a26edaca766f121cf501fbaaee
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
   }
