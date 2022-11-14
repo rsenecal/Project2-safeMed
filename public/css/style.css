@@ -58,7 +58,8 @@ main {
   font-size: 1.2rem;
 }
 
-#btn-sign-up {
+#btn-sign-up,
+#btn-login {
   background-color: var(--dark-color);
   border: px solid var(--dark-color);
   color: var(--cream-color);
@@ -67,6 +68,7 @@ main {
 
 #nav-btn-container .btn-primary:hover,
 #btn-sign-up:hover,
+#btn-login:hover,
 #user-select-container .btn-primary:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;

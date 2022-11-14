@@ -4,8 +4,12 @@ const { Patient, User, Prescription } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
-  res.render('homepage', { layout: 'main' });
+  res.render('homepage');
   //render
+});
+
+router.get('/login', (req, res) => {
+  res.render('login');
 });
 
 // GET /login - render login page
