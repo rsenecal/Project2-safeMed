@@ -1,11 +1,8 @@
+// Click event listener for all user cards rendered on user view
 document
   .querySelector('#user-select-container')
   .addEventListener('click', async (e) => {
-    e.preventDefault();
-    // remove any cached userIds from local storage
-    localStorage.clear();
-    // store the selected users id in local storage for dashboard.js to access
+    // The id of the user selected by the potential customer
     const userId = e.target.getAttribute('id');
-    localStorage.setItem('userId', userId);
-    window.location.replace('/dashboard');
+    window.location.replace(`/dashboard/${userId}`);
   });

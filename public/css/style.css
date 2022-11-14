@@ -130,7 +130,6 @@ main {
     color: var(--cream-color);
 }
 body{
-  margin-top:20px;
   background:#f5f7fa;
 }
 .panel.panel-default {
@@ -151,7 +150,7 @@ body{
   height: 48px!important;
 }
 
-body{margin-top:20px;
+body{
   background-color:#eee;
   }
   .project-list-table {
@@ -241,7 +240,6 @@ body{margin-top:20px;
 
 
 /* --- CSS FOR Pricing Table page  */
-body{margin-top:20px;}
 .section-title {
     position: relative;
 }
