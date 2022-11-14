@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { checkAuth } = require('../middlewares/authMiddleware');
 const { Patient, User, Prescription } = require('../models');
 
 //GET homepage
@@ -8,19 +9,19 @@ router.get('/', (req, res) => {
 });
 
 // GET /login - render login page
-router.get('/login', async (req, res) => {
+router.get('/user-select', async (req, res) => {
   try {
     const userData = await User.findAll({});
 
     const users = userData.map((user) => user.get({ plain: true }));
-    res.render('login', { users });
+    res.render('user', { users });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // GET /dashboard - render dashboard page
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', checkAuth, async (req, res) => {
   try {
     const patientData = await Patient.findAll({
       // *** We need a where clause if we create a relationship between patients and uer
@@ -37,7 +38,6 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-
 router.get('/prescriptions', async (req, res) => {
   try {
     const prescriptiontData = await Prescription.findAll({
@@ -46,7 +46,6 @@ router.get('/prescriptions', async (req, res) => {
       // where: {
       //   patient_id: req.session.patientId,
       // },
-
       // include: [
       //   {
       //     model: Patient,
@@ -55,18 +54,18 @@ router.get('/prescriptions', async (req, res) => {
       //       'Last_name',
       //     ],
       //   },
-        // {
-        //   model: Med,
-        //   attributes: [
-        //     'name',
-        //     'maker',
-        //   ],
-        // },
-
+      // {
+      //   model: Med,
+      //   attributes: [
+      //     'name',
+      //     'maker',
+      //   ],
+      // },
       // ],
-
     });
-    const prescriptions = prescriptiontData.map((prescription) => prescription.get({ plain: true }));
+    const prescriptions = prescriptiontData.map((prescription) =>
+      prescription.get({ plain: true })
+    );
     res.render('prescriptions', { prescriptions });
     // res.status(200).json(patients);
   } catch (err) {

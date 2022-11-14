@@ -3,12 +3,14 @@
     "first_name": "Tony",
     "last_name": "Stark",
     "email": "iamironman@gmail.com",
+    "password": "password",
     "affiliation": "Avengers"
   },
   {
     "first_name": "Danny",
     "last_name": "Rand",
     "email": "ironfist@gmail.com",
+    "password": "iamapassword",
     "affiliation": "Defenders"
   }
 ]
