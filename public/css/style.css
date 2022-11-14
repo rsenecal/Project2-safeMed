@@ -79,6 +79,12 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+#view-btn {
+    background-color: white;
+    border: none;
+}
+
+
 /* Form Styles */
 #sign-up-form,
 .form-container {
