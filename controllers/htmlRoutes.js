@@ -18,7 +18,10 @@ router.get('/user-select', async (req, res) => {
     const userData = await User.findAll({});
 
     const users = userData.map((user) => user.get({ plain: true }));
-    res.render('user', { users });
+    res.render('user', {
+      users,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,7 +38,10 @@ router.get('/dashboard', checkAuth, async (req, res) => {
       //   },
     });
     const patients = patientData.map((patient) => patient.get({ plain: true }));
-    res.render('dashboard', { patients });
+    res.render('dashboard', {
+      patients,
+      loggedIn: req.session.loggedIn,
+    });
     // res.status(200).json(patients);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
@@ -70,7 +76,10 @@ router.get('/prescriptions', async (req, res) => {
     const prescriptions = prescriptiontData.map((prescription) =>
       prescription.get({ plain: true })
     );
-    res.render('prescriptions', { prescriptions });
+    res.render('prescriptions', {
+      prescriptions,
+      loggedIn: req.session.loggedIn,
+    });
     // res.status(200).json(patients);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
