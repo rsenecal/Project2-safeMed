@@ -12,6 +12,30 @@ body {
   }
 
   /* login.handlebars */
-  .usernameAndPassword input{
-    
+  #username{
+    width: 333px;
+    border-radius: 25px;
+  }
+
+  #password{
+    width: 333px;
+    border-radius: 25px;
+  }
+
+  #submitButton {
+    width: 111px;
+    border-radius: 25px;
+    border-style: none;
+    color: white;
+    background-color: #79bc4d;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .usernameAndPassword {
+    margin: auto;
+    padding: 25px;
+    width: 383px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #79bc4d;
   }
