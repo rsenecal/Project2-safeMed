@@ -3,8 +3,12 @@ const { Patient, User, Prescription,Med } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
-  res.render('homepage', { layout: 'main' });
+  res.render('homepage');
   //render
+});
+
+router.get('/login', (req, res) => {
+  res.render('login');
 });
 
 // GET /login - render login page
@@ -13,7 +17,10 @@ router.get('/user-select', async (req, res) => {
     const userData = await User.findAll({});
 
     const users = userData.map((user) => user.get({ plain: true }));
-    res.render('user', { users });
+    res.render('user', {
+      users,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,7 +37,10 @@ router.get('/dashboard', async (req, res) => {
       //   },
     });
     const patients = patientData.map((patient) => patient.get({ plain: true }));
-    res.render('dashboard', { patients });
+    res.render('dashboard', {
+      patients,
+      loggedIn: req.session.loggedIn,
+    });
     // res.status(200).json(patients);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
@@ -47,10 +57,21 @@ router.get('/patientmeds', async (req, res) => {
       //     patient_id: req.session.userId,
       //   },
     });
+<<<<<<< HEAD
+    const prescriptions = prescriptiontData.map((prescription) =>
+      prescription.get({ plain: true })
+    );
+    res.render('prescriptions', {
+      prescriptions,
+      loggedIn: req.session.loggedIn,
+    });
+    // res.status(200).json(patients);
+=======
     const patientmeds = patientData.map((patient) => patient.get({ plain: true }));
     // console.dir (patientmeds[1].Meds[0]);
     res.render('patientmeds', { patientmeds });
     // res.status(200).json(patientmeds);
+>>>>>>> 397092a2f3ddd2a26edaca766f121cf501fbaaee
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
   }

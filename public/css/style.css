@@ -4,6 +4,7 @@
   --tertiary-color:	#ff9900;
   --dark-color: #3c642c;
   --cream-color: #FFFFF6;
+  --link-blue: #00008b;
 }
 
 html, 
@@ -33,6 +34,10 @@ main {
   height: 100%;
 }
 
+#login-main {
+  padding-top: 5rem;
+}
+
 /* Navbar Styles */
 #main-header .navbar {
   background-color: var(--primary-color) !important;
@@ -58,15 +63,17 @@ main {
   font-size: 1.2rem;
 }
 
-#btn-sign-up {
+#btn-sign-up,
+#btn-login {
   background-color: var(--dark-color);
-  border: px solid var(--dark-color);
+  border: 2px solid var(--dark-color);
   color: var(--cream-color);
   font-size: 1.4rem;
 }
 
 #nav-btn-container .btn-primary:hover,
 #btn-sign-up:hover,
+#btn-login:hover,
 #user-select-container .btn-primary:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;
@@ -79,9 +86,23 @@ main {
 
 
 /* Form Styles */
-#sign-up-form {
+#sign-up-form,
+.form-container {
   border: 1px solid var(--tertiary-color);
   background-color: var(--primary-color);
+}
+
+.form-container p {
+  margin-bottom: none;
+}
+
+.form-container a {
+  color: var(--link-blue);
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
 }
 
 #sign-up-form input {
@@ -91,6 +112,11 @@ main {
 
 #sign-up-form input:focus {
   border: 1px solid var(--tertiary-color);
+}
+
+#register-link-container {
+  padding-top: 3rem;
+  color: white;
 }
 
 /*  LAYOUT STYLE FOR DASHBOARD & PATIENTS */
