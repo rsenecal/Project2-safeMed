@@ -4,7 +4,7 @@ const {
   Patient,
   Prescription,
   Med,
-  PresHistory,
+  // PresHistory,
   PotentialCustomer,
 } = require('../models');
 
