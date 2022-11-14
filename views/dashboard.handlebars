@@ -86,7 +86,8 @@
                                 <th scope="row" class="ps-4">
                                     <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck1" /><label class="form-check-label" for="contacusercheck1"></label></div>
                                 </th>
-                                <td class="pt-fname"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="avatar-sm rounded-circle me-2" />
+                                {{!-- <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div> --}}
+                                <td class="pt-fname"><img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="patient-pic" class="avatar-sm rounded-circle me-2" />
                                 <a href="#" class="text-body">{{patient.first_name}}</a></td>
                                 <td class="pt-lname">{{patient.last_name}}</td>
                                 <td class="pt-dob">{{formatDate patient.dob 'MMM Do YYYY'}}</td>
@@ -95,6 +96,7 @@
                                 <td>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
+                                            {{!-- add patient id --}}
                                             <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="px-2 text-success"><i class='bx bxs-hand-up'></i></a> 
                                         </li>
                                     </ul>
