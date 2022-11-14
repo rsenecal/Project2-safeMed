@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Patient, User } = require('../models');
+const { Patient, User, Prescription } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
@@ -37,5 +37,41 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+
+router.get('/prescriptions', async (req, res) => {
+  try {
+    const prescriptiontData = await Prescription.findAll({
+      // *** We need a where clause if we create a relationship between patients and uer
+      //  Currently patient is not link to user.
+      // where: {
+      //   patient_id: req.session.patientId,
+      // },
+
+      // include: [
+      //   {
+      //     model: Patient,
+      //     attributes: [
+      //       'first_name',
+      //       'Last_name',
+      //     ],
+      //   },
+        // {
+        //   model: Med,
+        //   attributes: [
+        //     'name',
+        //     'maker',
+        //   ],
+        // },
+
+      // ],
+
+    });
+    const prescriptions = prescriptiontData.map((prescription) => prescription.get({ plain: true }));
+    res.render('prescriptions', { prescriptions });
+    // res.status(200).json(patients);
+  } catch (err) {
+    res.status(400).json({ err, msg: 'Something is not right' });
+  }
+});
 
 module.exports = router;
