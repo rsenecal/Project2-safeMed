@@ -11,6 +11,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/paymentcompleted', (req, res) => {
+  res.render('paymentcompleted');
+});
 // GET /login - render login page
 router.get('/user-select', async (req, res) => {
   try {
@@ -77,18 +80,6 @@ router.get('/patientmeds', async (req, res) => {
   }
 });
 
-
-// router.post('/prescriptions', function(req, res, next) {
-//   fetch('/api/patients',{
-//     method: 'get',
-//     headers: { 'Accept': 'application/json' },
-//   })
-//     .then(res => res.json())
-//     .then(json => console.log(json));
-//   res.render('prescriptions');
-// });
-
-// res.status(200).json(patientMeds);
 
 
 

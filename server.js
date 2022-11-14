@@ -82,6 +82,29 @@ app.use(
   express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist'))
 );
 
+
+// This is your test secret API key.
+const stripe = require('stripe')('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
+const YOUR_DOMAIN = 'http://localhost:3001';
+
+app.post('/checkoutplan1', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1M3bNuJ206BF34Y8t20pYpl0',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/paymentcompleted`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
+  });
+
+  res.redirect(303, session.url);
+});
+
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
