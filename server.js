@@ -5,6 +5,7 @@ const sequelize = require('./config/connection');
 const session = require('express-session');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+const moment = require('moment');
 // const stripe = require('stripe')(keys.stripeSecretKey);
 // const bodyParser = require('body-parser');
 // const keys = require('./config/keys');
@@ -34,11 +35,27 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: true }));
 const hbs = exphbs.create({
   mainLayout: 'main.handlebars',
-});
+  // Custom helpers for handlebars
+  helpers: {
+    dollar: (cents) => cents/100,
+
+    formatDate: function (date, format) {
+      return moment(date).format(format);
+    },
+
+
+    has_passed: function(dateString, options) {
+      if(moment(dateString).isAfter(moment())){
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    }
+  }});
+
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 // TODO: Invoke app.use() and serve static files from the '/public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
