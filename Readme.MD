@@ -38,19 +38,18 @@
   - Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
   - Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
 
-  ## Usage
-  
-
   ## Credits
    Sindid Eedh, Evince Edouard, Jeff Grasso, Hasan Noor, Roodolph Senecal, Bria
 
   ## Questions
+  Feel free to contact any of the contributors of this project via github profiles to the right.
 
 
   ### License
   none
 
   ## Tests
+  The Insomnia Design and API Client is used to test all GET, POST, PUT and DELETE Data from the given URL. You will also require MySQL for this application's database.
   
 
 [Handlebarsjs.com]: https://img.shields.io/badge/Handlebars-Handlebars-blue

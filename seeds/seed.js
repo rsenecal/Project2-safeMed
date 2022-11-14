@@ -4,7 +4,7 @@ const {
   Patient,
   Prescription,
   Med,
-  PresHistory,
+  // PresHistory,
   PotentialCustomer,
 } = require('../models');
 
@@ -19,7 +19,6 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userData, {
-    individualHooks: true,
     returning: true,
   });
 
@@ -34,7 +33,7 @@ const seedDatabase = async () => {
   });
 
   await PotentialCustomer.bulkCreate(potentialCustomerData, {
-    // individualHooks: true,
+    individualHooks: true,
     returning: true,
   });
 

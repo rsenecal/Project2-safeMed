@@ -8,12 +8,12 @@ router.get('/', (req, res) => {
 });
 
 // GET /login - render login page
-router.get('/login', async (req, res) => {
+router.get('/user-select', async (req, res) => {
   try {
     const userData = await User.findAll({});
 
     const users = userData.map((user) => user.get({ plain: true }));
-    res.render('login', { users });
+    res.render('user', { users });
   } catch (err) {
     res.status(500).json(err);
   }

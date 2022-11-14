@@ -43,6 +43,7 @@ router.post('/', async (req, res) => {
     const customerAdded = await PotentialCustomer.create({
       ...req.body,
     });
+    console.log(req.body);
     res.status(200).json(customerAdded);
   } catch (err) {
     res.status(500).json(err);

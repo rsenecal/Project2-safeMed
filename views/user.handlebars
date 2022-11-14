@@ -5,9 +5,10 @@
       <p class="col-md-8 fs-4">Our potential customers are afforded the opportunity to test a demo version of our product. safeMed offers a variety of user types with different permissions. To explore the options available to each type of user, select a user from the options below. To test another user, simply click logout in the navigation bar and choose a different user from this page</p>
     </div>
   </section>
-  <section id="user-card-container" class="row justify-content-around">
+  <section id="user-select-container" class="row justify-content-around">
       {{#each users as |user|}}
       {{> user-details}}
       {{/each}}
   </section>
 </main>
+<script src="/js/user.js"></script>
