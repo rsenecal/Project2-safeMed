@@ -18,10 +18,6 @@ Prescription.init(
         key: 'id',
       },
     },
-    med_given: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -45,6 +41,22 @@ Prescription.init(
     deleted_at: {
       type: DataTypes.DATE,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    med_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'med',
+        key: 'id',
+      },
     },
   },
   {

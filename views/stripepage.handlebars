@@ -1,0 +1,49 @@
+<section class="pricing-section">
+    <div class="container">
+		<div class="row justify-content-md-center">
+			<div class="col-xl-5 col-lg-6 col-md-8">
+				<div class="section-title text-center title-ex1">
+					<h2>Pricing Tables</h2>
+					<p>Secure Med tracking for your staff.</p>
+				</div>
+			</div>
+		</div>
+
+         {{!-- <script src="https://checkout.stripe.com/checkout.js" defer></script> --}}
+
+{{!-- 
+         <script src="pricing.js" defer></script> --}}
+               
+       
+          
+
+		<!-- Pricing Table starts -->
+		<div class="row">
+            {{#each items.pricing }}
+			<div class="col-md-4">
+				<div class="price-card " data-price-id ="{{id}}">
+					<h2>{{pricePlan}}</h2>
+					<p>Per Host/ per Month</p>
+					<p class="price" id="planPrice"><span>{{dollar price}}</span>/ Month</p>
+					<ul class="pricing-offers">
+						<li>{{feature1}}</li>
+						<li>{{feature2}}</li>
+						<li>{{feature3}}</li>
+						<li>{{feature4}}</li>
+					</ul>
+                    <button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan{{id}}">Buy</button>
+
+					{{!-- <a href="#" class="btn btn-primary btn-mid">Buy Now</a> --}}
+				</div>
+			</div>
+            {{/each}}
+			
+		</div>
+	</div>
+</section>
+
+<script src="https://checkout.stripe.com/checkout.js" defer></script>
+<script>
+    stripePublicKey = "{{ stripePublishableKey }}"
+</script>  
+<script src="./js/pricing.js" defer></script>

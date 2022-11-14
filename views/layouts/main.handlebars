@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../public/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>safeMed</title>
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./img/safeMed-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        safeMed
-      </a>
-    </div>
-  </nav>
+  <header id="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <img id="icon-img" src="./img/safeMed-icon.png" alt="" width="60" height="60" class="d-inline-block align-text-top"> 
+        </div>
+        <div class="navbar-title" class="text-light">safeMed</div>
+        <div id="nav-btn-container" class="navbar-nav">
+          <button id="dashboard" type="button" class="btn btn-primary mx-1">Dashboard</button>
+          {{#if loggedIn}}
+          <button id="logout-btn" type="button" class="btn btn-primary mx-1">Logout</button>
+          {{else}}
+          <button id="login-btn" type="button" class="btn btn-primary mx-1">Login</button>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+  </header>
   {{{body}}}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Patient extends Model { }
+class PotentialCustomer extends Model {}
 
-Patient.init(
+PotentialCustomer.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,47 +22,22 @@ Patient.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       validate: {
         isEmail: true,
       },
     },
-    dob: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    height: {
+    affiliation: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    weight: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    address: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    state: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    postal_code: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
     sequelize,
-    timestamps: false,
+    modelName: 'potential_customer',
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'patient',
   }
 );
 
-module.exports = Patient;
+module.exports = PotentialCustomer;

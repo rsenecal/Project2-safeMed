@@ -1,11 +1,33 @@
-const User = require('./User');
-const Patient = require('./Patient');
-const Prescription = require('./Prescription');
-const PresHistory = require('./PresHistory');
-const Med = require('./Med');
+const User = require('./user');
+const Patient = require('./patient');
+const Prescription = require('./prescription');
+const Med = require('./med');
+const PotentialCustomer = require('./PotentialCustomer');
 
-User.hasMany(Patient, {
-  foreignKey: 'user_id',
+User.belongsToMany(Patient, {
+  through: {
+    model: Prescription,
+    unique: false,
+  },
+  // foreignKey: 'user_id',
+  // onDelete: 'CASCADE',
+});
+
+Med.belongsToMany(Patient, {
+  through: {
+    model: Prescription,
+    unique: false,
+  },
+  // foreignKey: 'user_id',
+  // onDelete: 'CASCADE',
+});
+
+Patient.belongsToMany(Med, {
+  through: {
+    model: Prescription,
+    unique: false,
+  },
+  // foreignKey: 'user_id',
   // onDelete: 'CASCADE',
 });
 
@@ -15,16 +37,16 @@ Patient.belongsTo(User, {
 
 Patient.hasMany(Prescription, {
   foreignKey: 'patient_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'SET NULL',
 });
 
 Prescription.belongsTo(Patient, {
   foreignKey: 'patient_id',
 });
 
-PresHistory.belongsTo(Prescription, {
-  foreignKey: 'prescription_id',
-});
+// PresHistory.belongsTo(Prescription, {
+//   foreignKey: 'prescription_id',
+// });
 
 // Med.belongsTo(Prescription, {
 //   foreignKey: 'prescription_med_given',
@@ -38,7 +60,6 @@ PresHistory.belongsTo(Prescription, {
 // }
 // );
 
+module.exports = { User, Patient, Prescription, Med, PotentialCustomer };
 
-
-
-module.exports = { User, Patient, Prescription, PresHistory, Med };
+// module.exports = { User, Patient, Prescription, PresHistory, Med };
