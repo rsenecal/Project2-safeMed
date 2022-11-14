@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { checkAuth, checkUser } = require('../middlewares/index');
 const { Patient, User, Prescription, Med } = require('../models');
 
 //GET homepage
@@ -13,7 +14,7 @@ router.get('/login', (req, res) => {
 });
 
 // GET /login - render login page
-router.get('/user-select', async (req, res) => {
+router.get('/user-select', checkAuth, async (req, res) => {
   try {
     const userData = await User.findAll({});
 
@@ -28,7 +29,7 @@ router.get('/user-select', async (req, res) => {
 });
 
 // GET /dashboard - render dashboard page
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', checkUser, async (req, res) => {
   try {
     const patientData = await Patient.findAll({
       // *** We need a where clause if we create a relationship between patients and uer
