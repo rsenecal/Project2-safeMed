@@ -22,8 +22,17 @@ const PORT = process.env.PORT || 3001;
 //Set up sessions
 const sess = {
   secret: process.env.SESSION_SECRET,
+  cookie: {
+    maxAge: 5 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: false,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -37,22 +46,21 @@ const hbs = exphbs.create({
   mainLayout: 'main.handlebars',
   // Custom helpers for handlebars
   helpers: {
-    dollar: (cents) => cents/100,
+    dollar: (cents) => cents / 100,
 
     formatDate: function (date, format) {
       return moment(date).format(format);
     },
 
-
-    has_passed: function(dateString, options) {
-      if(moment(dateString).isAfter(moment())){
+    has_passed: function (dateString, options) {
+      if (moment(dateString).isAfter(moment())) {
         return options.fn(this);
       } else {
         return options.inverse(this);
       }
-    }
-  }});
-
+    },
+  },
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
