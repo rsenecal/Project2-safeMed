@@ -44,21 +44,10 @@ Prescription.belongsTo(Patient, {
   foreignKey: 'patient_id',
 });
 
-// PresHistory.belongsTo(Prescription, {
-//   foreignKey: 'prescription_id',
-// });
+Prescription.belongsTo(Patient, {
+  foreignKey: 'med_id',
+});
 
-// Med.belongsTo(Prescription, {
-//   foreignKey: 'prescription_med_given',
-// });
-
-// Prescription.hasMany(Pres_History, {
-//   foreignKey: 'prescription_id',
-// },
-// Med, {
-//   foreignKey: 'prescription_med_given'
-// }
-// );
 
 module.exports = { User, Patient, Prescription, Med, PotentialCustomer };
 
