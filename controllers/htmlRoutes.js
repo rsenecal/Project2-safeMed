@@ -21,7 +21,7 @@ router.get('/user-select', async (req, res) => {
 });
 
 // GET /dashboard - render dashboard page
-router.get('/dashboard', checkAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   try {
     const patientData = await Patient.findAll({
       // *** We need a where clause if we create a relationship between patients and uer

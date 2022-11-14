@@ -72,6 +72,12 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+#action-btn {
+    background-color: white;
+    border: none;
+}
+
+
 /* Form Styles */
 #sign-up-form {
   border: 1px solid var(--tertiary-color);
