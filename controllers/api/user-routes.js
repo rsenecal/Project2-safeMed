@@ -11,6 +11,31 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET api/users/:id - get user by id
+router.get('/:id', async (req, res) => {
+  try {
+    console.log('I got called');
+    const user = await User.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!user) {
+      return res.status(404).json({
+        msg: 'perhaps there is no user with this id',
+      });
+    }
+
+    res.status(200).json(user.get({ plain: true }));
+  } catch (err) {
+    res.status(500).json({
+      err,
+      msg: 'server error',
+    });
+  }
+});
+
 // POST /api/users - makes a new user
 router.post('/', async (req, res) => {
   // get user data from the req.body
@@ -46,6 +71,7 @@ router.post('/login', async (req, res) => {
 
   // is the password correct
   // no? send back 401
+  console.log(password);
   if (!user.checkPassword(password)) {
     return res.status(401).json({
       message: 'Username or password was incorrect. ',

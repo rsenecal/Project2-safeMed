@@ -1,25 +1,31 @@
-const loginFormHandler = async (event) => {
-  event.preventDefault();
-
-  const username = document.getElementById('username-login').value.trim();
-  const password = document.getElementById('password-login').value.trim();
-  console.log(username, password);
-
-  if (username && password) {
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log in.');
-    }
-  }
-};
-
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector('#user-select-container')
+  .addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const userId = e.target.getAttribute('id');
+
+    try {
+      const userResponse = await fetch(`/api/users/${userId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const { username, password } = await userResponse.json();
+
+      const user = {
+        username: username,
+        password: password,
+      };
+
+      const loginResponse = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (loginResponse.ok) {
+        window.location.replace('/dashboard');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
