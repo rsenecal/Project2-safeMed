@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Patient, User, Prescription,Med } = require('../models');
+const { Patient, User, Prescription, Med } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   //render
 });
 
+// GET /login - render customer login page
 router.get('/login', (req, res) => {
   res.render('login');
 });
@@ -50,33 +51,23 @@ router.get('/dashboard', async (req, res) => {
 router.get('/patientmeds', async (req, res) => {
   try {
     const patientData = await Patient.findAll({
-      include: [{model: Med, through: Prescription}]
+      include: [{ model: Med, through: Prescription }],
       // *** We need a where clause if we create a relationship between patients and meds
       //  Currently patient is not link to user.
       //   where: {
       //     patient_id: req.session.userId,
       //   },
     });
-<<<<<<< HEAD
-    const prescriptions = prescriptiontData.map((prescription) =>
-      prescription.get({ plain: true })
+    const patientmeds = patientData.map((patient) =>
+      patient.get({ plain: true })
     );
-    res.render('prescriptions', {
-      prescriptions,
-      loggedIn: req.session.loggedIn,
-    });
-    // res.status(200).json(patients);
-=======
-    const patientmeds = patientData.map((patient) => patient.get({ plain: true }));
     // console.dir (patientmeds[1].Meds[0]);
     res.render('patientmeds', { patientmeds });
     // res.status(200).json(patientmeds);
->>>>>>> 397092a2f3ddd2a26edaca766f121cf501fbaaee
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
   }
 });
-
 
 // router.post('/prescriptions', function(req, res, next) {
 //   fetch('/api/patients',{
@@ -89,7 +80,5 @@ router.get('/patientmeds', async (req, res) => {
 // });
 
 // res.status(200).json(patientMeds);
-
-
 
 module.exports = router;
