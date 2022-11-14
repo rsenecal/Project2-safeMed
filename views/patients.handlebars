@@ -27,9 +27,9 @@
     <td class="pt-email">{{patient.email}}</td>
     <td class="chart-action">
         <div> 
-            <button>Edit</button>
-            <button>Delete</button>
-            <button>Reassign</button>
+            <button onclick="edit_patient(event)">Edit</button>
+            <button onclick="delete_patient(event)">Delete</button>
+            <button onclick="reassign_patient(event)">Reassign</button>
         </div>
 
         </td>
@@ -42,3 +42,4 @@
 </div>
 
 </main>
+<script src="../public/js/patients.js"></script>
