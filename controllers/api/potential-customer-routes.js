@@ -13,30 +13,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET api/customers/:id - get one potential customer
-router.get('/:id', async (req, res) => {
-  try {
-    const customer = await PotentialCustomer.findOne({
-      where: {
-        id: req.params.id,
-      },
-    });
-
-    if (!customer) {
-      return res.status(404).json({
-        msg: 'perhaps there are no customers with this id',
-      });
-    }
-
-    res.status(200).json(customer);
-  } catch (err) {
-    res.status(500).json({
-      err,
-      msg: 'server error',
-    });
-  }
-});
-
 // POST api/customers - add new potential customer
 router.post('/', async (req, res) => {
   try {
