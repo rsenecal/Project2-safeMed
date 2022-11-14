@@ -57,17 +57,20 @@ router.get('/patientmeds', async (req, res) => {
       //     patient_id: req.session.userId,
       //   },
     });
-    const prescriptions = prescriptiontData.map((prescription) =>
-      prescription.get({ plain: true })
-    );
-    res.render('prescriptions', {
-      prescriptions,
-      loggedIn: req.session.loggedIn,
-    });
+    // const prescriptions = prescriptiontData.map((prescription) =>
+    //   prescription.get({ plain: true })
+    // );
+    // res.render('prescriptions', {
+    //   prescriptions,
+    //   loggedIn: req.session.loggedIn,
+    // });
     // res.status(200).json(patients);
     const patientmeds = patientData.map((patient) => patient.get({ plain: true }));
     // console.dir (patientmeds[1].Meds[0]);
-    res.render('patientmeds', { patientmeds });
+    res.render('patientmeds', { 
+      patientmeds,
+      loggedIn: req.session.loggedIn,
+    });
     // res.status(200).json(patientmeds);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });

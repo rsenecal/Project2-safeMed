@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     if(error) {
       res.status(500).end();
     } else {
-      res.render('stripepage', {
+      res.render('pricingpage', {
         stripePublishableKey: keys.stripePublishableKey,
         items: JSON.parse(data)
         // helpers: {
