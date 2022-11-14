@@ -50,6 +50,16 @@ router.post('/', async (req, res) => {
   });
 });
 
+// POST /api/users/cookie - store userID cookie
+router.post('/cookie/:id', async (req, res) => {
+  req.session.save(() => {
+    req.session.userId = req.params.id;
+    res.status(200).json({
+      message: 'successfully logged in',
+    });
+  });
+});
+
 // // POST /api/users/login - logs a user in
 // router.post('/login', async (req, res) => {
 //   // get user data from the req.body
