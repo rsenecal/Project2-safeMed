@@ -15,11 +15,13 @@ body {
   #username{
     width: 333px;
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
   }
 
   #password{
     width: 333px;
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
   }
 
   #submitButton {
