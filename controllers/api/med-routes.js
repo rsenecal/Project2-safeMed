@@ -1,18 +1,15 @@
-const { Patient, Med } = require('../../models');
+const { Patient, Med, Prescription } = require('../../models');
 
 const router = require('express').Router();
 
 // get all meds
 router.get('/', async (req, res) => {
   try {
-    const meds = await Med.findAll({
-    // *** We need a where clause if we create a relationship between med and user or patient
-    //  Currently we do not have a relationship between meds and Patient or user.
-    //   where: {
-    //     user_id: req.session.userId,
-    //   },
+    const medData = await Med.findAll({
+      // Join with Meds using prescription as a through table
+      include: [{model: Patient, through: Prescription}]
     });
-    res.status(200).json(meds);
+    res.status(200).json(medData);
   } catch (err) {
     res
       .status(400)

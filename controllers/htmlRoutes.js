@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Patient, User, Prescription } = require('../models');
+const { Patient, User, Prescription,Med } = require('../models');
 
 //GET homepage
 router.get('/', (req, res) => {
@@ -37,41 +37,38 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-
-router.get('/prescriptions', async (req, res) => {
+router.get('/patientmeds', async (req, res) => {
   try {
-    const prescriptiontData = await Prescription.findAll({
-      // *** We need a where clause if we create a relationship between patients and uer
+    const patientData = await Patient.findAll({
+      include: [{model: Med, through: Prescription}]
+      // *** We need a where clause if we create a relationship between patients and meds
       //  Currently patient is not link to user.
-      // where: {
-      //   patient_id: req.session.patientId,
-      // },
-
-      // include: [
-      //   {
-      //     model: Patient,
-      //     attributes: [
-      //       'first_name',
-      //       'Last_name',
-      //     ],
+      //   where: {
+      //     patient_id: req.session.userId,
       //   },
-        // {
-        //   model: Med,
-        //   attributes: [
-        //     'name',
-        //     'maker',
-        //   ],
-        // },
-
-      // ],
-
     });
-    const prescriptions = prescriptiontData.map((prescription) => prescription.get({ plain: true }));
-    res.render('prescriptions', { prescriptions });
-    // res.status(200).json(patients);
+    const patientmeds = patientData.map((patient) => patient.get({ plain: true }));
+    // console.dir (patientmeds[1].Meds[0]);
+    res.render('patientmeds', { patientmeds });
+    // res.status(200).json(patientmeds);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
   }
 });
+
+
+// router.post('/prescriptions', function(req, res, next) {
+//   fetch('/api/patients',{
+//     method: 'get',
+//     headers: { 'Accept': 'application/json' },
+//   })
+//     .then(res => res.json())
+//     .then(json => console.log(json));
+//   res.render('prescriptions');
+// });
+
+// res.status(200).json(patientMeds);
+
+
 
 module.exports = router;

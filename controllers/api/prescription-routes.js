@@ -1,32 +1,11 @@
-const { Prescription } = require('../../models');
+const { Prescription, Med, Patient } = require('../../models');
 const router = require('express').Router();
 
 // get all Prescriptions
 router.get('/', async (req, res) => {
   try {
     const prescriptions = await Prescription.findAll({
-
-      // include: [
-      //   {
-      //     model: Patient,
-      //     attributes: [
-      //       'first_name',
-      //       'Last_name',
-      //     ],
-      //   }
-      // {
-      //   model: Med,
-      //   attributes: [
-      //     'name',
-      //     'maker',
-      //   ],
-      // },
-
-      // ],
-
-    //   where: {
-    //     patient_id: req.session.patientId,
-    //   },
+      // include: [{model: Med, through: Prescription}]
     });
     res.status(200).json(prescriptions);
   } catch (err) {
