@@ -1,123 +1,89 @@
-     {{!-- HEADER --}}
-                <div class="row justify-content-md-center">
-			<div class="col-xl-5 col-lg-6 col-md-8">
-				<div class="section-title text-center title-ex1">
-					<h2>Dashboard</h2>
-				</div>
+{{!-- HEADER --}}
+<main class="py-3">
+	<div class="row justify-content-md-center">
+		<div class="col-xl-5 col-lg-6 col-md-8">
+			<div class="section-title text-center title-ex1">
+				<h2>Dashboard</h2>
 			</div>
+		</div>
 {{!-- ASIDE SECTION --}}
-<div class="container bootstrap snippets bootdey">
-<div class="row ng-scope">
-    <div class="col-md-3">
-        <div class="panel panel-default">
+		<div class="container bootstrap snippets bootdey">
+			<div class="row ng-scope">
+				<div class="col-md-3">
+					<div class="panel panel-default py-3 rounded">
             <div class="panel-body text-center">
-                <h3 class="m0 text-bold">Medical Professional</h3>
-                <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div>
-                <td><span class="badge badge-soft-success mb-2 fs-3">Nurse</span></td>
-                <div class="mv-lg">
-                    <p>Name:</p>
-                    <p>Phone:</p>
-                    <p>Email:</p>
-                </div>
-                <div id="btn-logout"><a class="btn btn-sm" href="/">Logout</a></div>
+							<h3 class="m0 text-bold">Medical Professional</h3>
+							<div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div>
+							<td><span class="badge badge-soft-success mb-2 fs-3">{{user.role}}</span></td>
+							<div class="mv-lg">
+								<p>Name: {{user.first_name}} {{user.last_name}}</p>
+								<p>Username: {{user.username}}</p>
+								<p>Email: {{user.email}}</p>
+							</div>
+							<div id="btn-logout">
+								<a class="btn btn-sm" href="/user-select">Logout</a>
+							</div>
             </div>
-        </div>
-        {{!-- **** REMOVED ACTIVE PATIENT PANEL UNTIL WE NEED IT --}}
-        {{!-- <div class="panel panel-default hidden-xs hidden-sm">
-            <div class="panel-heading">
-                <div class="panel-title text-center">Active Patients</div>
-            </div>
-            <div class="panel-body">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Floyd Ortiz
-                            <div class="text-sm text-muted">12m ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-    </div>
-    <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
-           
-{{!-- PATIENT LIST SECTION--}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-{{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" /> --}}
-<div class="container">
-    
-    {{!-- <div class="col-md-6 float-xxl-end">
-                <div>
-                    <a href="#" data-bs-toggle="modal" data-bs-target=".add-new" class="btn btn-sm btn-light float-xxl-"><i class="bx bx-plus me-1"></i>Add Patient</a>
-                </div>
-    </div> --}}
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="mb-3">
-                <h5 class="card-title">Patient List</h5>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="panel panel-default py-3 rounded">
+						<div class="panel-body">
+							{{!-- PATIENT LIST SECTION--}}
+							<div class="container">
+								<div class="row align-items-center">
+										<div class="col-md-6">
+												<div class="mb-3">
+														<h5 class="card-title">Patient List</h5>
+												</div>
+										</div>
+								</div>
 
-    <div class="row">
-        <div class="col-lg-12">
-                <div class="table-responsive">
-                    <table class="table project-list-table table-nowrap align-middle table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="ps-4" style="width: 50px;">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck" /><label class="form-check-label" for="contacusercheck"></label></div>
-                                </th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">DOB</th>
-                                <th scope="col">Height</th>
-                                <th scope="col">Email</th>
-                                <th scope="col" style="width: 200px;">View</th>
-                            </tr>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="table-responsive">
+											<table id="patients-table" class="table project-list-table table-nowrap align-middle table-borderless">
+                        <thead class="rounded">
+                          <tr>
+														<th scope="col">First Name</th>
+														<th scope="col">Last Name</th>
+														<th scope="col">DOB</th>
+														<th scope="col">Height</th>
+														<th scope="col">Email</th>
+														<th scope="col" style="width: 200px;">View Prescriptions</th>
+													</tr>
                         </thead>
-                          {{#each patients as |patient|}} 
+												{{#each patients as |patient|}} 
                         <tbody>
-                              <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck1" /><label class="form-check-label" for="contacusercheck1"></label></div>
-                                </th>
-                                {{!-- <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div> --}}
-                                <td class="pt-fname"><img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="patient-pic" class="avatar-sm rounded-circle me-2"/>
-                                <a href="#" class="text-body">{{patient.first_name}}</a></td>
-                                <td class="pt-lname">{{patient.last_name}}</td>
-                                <td class="pt-dob">{{formatDate patient.dob 'MMM Do YYYY'}}</td>
-                                <td class="pt-age">{{patient.height}}</td>
-                                <td class="pt-email">{{patient.email}}</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            {{!-- onclik btn feat to patient --}}
-                                            <button id="view-btn" class="px-2 text-success"><i class='bx bx-last-page bx-rotate-90'></i>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
+													<tr>
+														<td class="pt-fname">
+															<img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="patient-pic" class="avatar-sm rounded-circle me-2"/>
+                              <a href="#" class="text-body">{{patient.first_name}}</a>
+														</td>
+                            <td class="pt-lname">{{patient.last_name}}</td>
+														<td class="pt-dob">{{formatDate patient.dob 'MMM Do YYYY'}}</td>
+														<td class="pt-age">{{patient.height}}</td>
+														<td class="pt-email">{{patient.email}}</td>
+														<td>
+															<ul class="list-inline mb-0">
+																<li class="list-inline-item">
+																{{!-- onclik btn feat to patient --}}
+																	<button id="view-btn" class="btn btn-primary">View</button>
+																</li>
+															</ul>
+														</td>
+													</tr>
                         </tbody>
                         {{/each }} 
-                    </table>
-                </div>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> 
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row g-0 align-items-center pb-4">
-        <div class="col-sm-6">
-            <div><p class="mb-sm-0">Showing 1 to 5 of 5 entries</p></div>
-        </div>
-        </div>
-    </div>
-</div> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+	</div>
+</main>
