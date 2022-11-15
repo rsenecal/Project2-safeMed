@@ -46,5 +46,54 @@
         "city": "Georgia",
         "state": "Atlanta",
         "postal_code": "30301"
+    },
+
+    {
+        "first_name": "Lilja",
+        "last_name": "Birkir",
+        "email": "Birkir@gmail.com",
+        "dob": "01/01/2000 ",
+        "height": "74",
+        "weight": "220",
+        "address": "143 Elm Ave",
+        "city": "Gotham",
+        "state": "New York",
+        "postal_code": "11111"
+    },
+    {
+        "first_name": "Birta",
+        "last_name": "Einar",
+        "email": "Einar@gmail.com",
+        "dob": "08/25/1982",
+        "height": "78",
+        "weight": "150",
+        "address": "79 Cannibal Way",
+        "city": "Hartford",
+        "state": "Connecticut",
+        "postal_code": "06101"
+    },
+    {
+        "first_name": "Katrin",
+        "last_name": "Wise",
+        "email": "wise@gmail.com",
+        "dob": "04/21/1956",
+        "height": "74",
+        "weight": "180",
+        "address": "481 Georgie Lane",
+        "city": "Popcorn",
+        "state": "Indiana",
+        "postal_code": "47462"
+    },
+    {
+        "first_name": "Rakel",
+        "last_name": "Petur",
+        "email": "rakelpetur@gmail.com",
+        "dob": "09/13/2000",
+        "height": "82",
+        "weight": "200",
+        "address": "80 Fat Gandalf Way",
+        "city": "Georgia",
+        "state": "Atlanta",
+        "postal_code": "30301"
     }
 ]
