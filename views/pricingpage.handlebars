@@ -31,7 +31,9 @@
 						<li>{{feature3}}</li>
 						<li>{{feature4}}</li>
 					</ul>
-                    <button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan{{id}}">Buy</button>
+					<form action="/checkoutplan{{id}}" method="POST">
+						<button type="submit" class="btn btn-primary btn-mid" value="Submit" id="purchasedPlan{{id}}">Buy</button>
+					</form>
 
 					{{!-- <a href="#" class="btn btn-primary btn-mid">Buy Now</a> --}}
 				</div>

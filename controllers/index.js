@@ -5,7 +5,7 @@ const stripeRoutes = require('./stripeRoutes');
 
 router.use('/api', apiRoutes);
 router.use('/', htmlRoutes);
-router.use('/stripe', stripeRoutes);
+router.use('/pricing', stripeRoutes);
 // router.use(homeRoutes);
 
 router.use((req, res) => {

@@ -13,6 +13,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/paymentcompleted', (req, res) => {
+  res.render('paymentcompleted');
+});
 // GET /login - render login page
 router.get('/user-select', checkAuth, async (req, res) => {
   try {
@@ -64,27 +67,26 @@ router.get('/patientmeds', async (req, res) => {
       //     patient_id: req.session.userId,
       //   },
     });
+    // const prescriptions = prescriptiontData.map((prescription) =>
+    //   prescription.get({ plain: true })
+    // );
+    // res.render('prescriptions', {
+    //   prescriptions,
+    //   loggedIn: req.session.loggedIn,
+    // });
+    // res.status(200).json(patients);
     const patientmeds = patientData.map((patient) =>
       patient.get({ plain: true })
     );
     // console.dir (patientmeds[1].Meds[0]);
-    res.render('patientmeds', { patientmeds });
+    res.render('patientmeds', {
+      patientmeds,
+      loggedIn: req.session.loggedIn,
+    });
     // res.status(200).json(patientmeds);
   } catch (err) {
     res.status(400).json({ err, msg: 'Something is not right' });
   }
 });
-
-// router.post('/prescriptions', function(req, res, next) {
-//   fetch('/api/patients',{
-//     method: 'get',
-//     headers: { 'Accept': 'application/json' },
-//   })
-//     .then(res => res.json())
-//     .then(json => console.log(json));
-//   res.render('prescriptions');
-// });
-
-// res.status(200).json(patientMeds);
 
 module.exports = router;

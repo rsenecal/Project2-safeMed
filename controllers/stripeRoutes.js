@@ -4,11 +4,6 @@ const keys = require('../config/keys_dev');
 const fs = require('fs');
 const { data } = require('jquery');
 const stripe = require('stripe')(keys.stripeSecretKey);
-// const bodyParser = require('body-parser');
-
-// router.get('/', (req, res) => {
-//   res.render('stripepage', { stripePublishableKey: keys.stripePublishableKey });
-// });
 
 
 router.get('/', (req, res) => {
@@ -16,12 +11,9 @@ router.get('/', (req, res) => {
     if(error) {
       res.status(500).end();
     } else {
-      res.render('stripepage', {
-        stripePublishableKey: keys.stripePublishableKey,
+      res.render('pricingpage', {
+        // stripePublishableKey: keys.stripePublishableKey,
         items: JSON.parse(data)
-        // helpers: {
-        //   dollar: (cents) => cents/100
-        // }
       });
     //   console.log(items);
     }
@@ -42,26 +34,30 @@ router.get('/', (req, res) => {
 );
 
 
-// router.get('/charge', (req, res) => {
-//   res.render('stripecompleted',{layout: 'main'}, { stripePublishableKey: keys.stripePublishableKey });
-// });
+// This is your test secret API key.
+// const stripe = require('stripe')('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
+// const express = require('express');
+// const app = express();
+// app.use(express.static('public'));
 
-// Get all pricing for our price table page
-// router.post('/charge', (req, res) => {
-//   const amount = 1500;
+const YOUR_DOMAIN = 'http://localhost:3001';
 
-//   stripe.customers.create({
-//     email: req.body.stripeEmail,
-//     source: req.body.stripeToken
-//   })
-//     .then(customer => stripe.charges.create({
-//       amount,
-//       description: 'safeMed Basic Plan',
-//       currency: 'usd',
-//       customer: customer.id
-//     }))
-//     .then(() => window.location.replace('/stripe/charge'));
-//   // .then(() => res.render('stripecompleted', {layout: 'main'}));
-// });
+router.post('/safemedbasic', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1M3bNuJ206BF34Y8t20pYpl0',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/success.html`,
+    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+  });
 
+  res.redirect(303, session.url);
+});
+
+// app.listen(4242, () => console.log('Running on port 4242'));
 module.exports = router;
