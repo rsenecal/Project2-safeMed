@@ -87,6 +87,11 @@ app.use(
 );
 
 app.use(
+  '/boxicons',
+  express.static(path.join(__dirname, 'node_modules', 'boxicons', 'css'))
+);
+
+app.use(
   '/views',
   express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist'))
 );
