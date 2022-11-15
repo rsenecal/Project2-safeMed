@@ -9,7 +9,6 @@ const exphbs = require('express-handlebars');
 const moment = require('moment');
 // const stripe = require('stripe')(keys.stripeSecretKey);
 // const bodyParser = require('body-parser');
-const keys = require('./config/keys_dev');
 
 // Add for stripe.com integration
 // const bodyParser = require('body-parser');
@@ -96,11 +95,11 @@ app.use(
   express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist'))
 );
 
-
 // This is your test secret API key.
-const stripe = require('stripe')('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
+const stripe = require('stripe')(
+  'sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp'
+);
 const YOUR_DOMAIN = process.env.YOUR_DOMAIN;
-
 
 // Purchasing the basic plan
 app.post('/checkoutplan1', async (req, res) => {
@@ -136,7 +135,6 @@ app.post('/checkoutplan2', async (req, res) => {
 
   res.redirect(303, session.url);
 });
-
 
 // Purchasing the Premium Plan
 app.post('/checkoutplan3', async (req, res) => {
