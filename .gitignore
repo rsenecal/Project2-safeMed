@@ -3,4 +3,5 @@ node_modules
 .env
 package-lock.json
 npm-debug.log
+keys_dev.js
 /*.env
