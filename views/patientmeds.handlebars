@@ -1,154 +1,74 @@
-     {{!-- HEADER --}}
-                <div class="row justify-content-md-center">
-			<div class="col-xl-5 col-lg-6 col-md-8">
-				<div class="section-title text-center title-ex1">
-					<h2>Patient's Prescription Details</h2>
-				</div>
+{{!-- HEADER --}}
+<main class="py-3">
+	<div class="row justify-content-md-center">
+		<div class="col-xl-5 col-lg-6 col-md-8">
+			<div class="section-title text-center title-ex1">
+				<h2>Dashboard</h2>
 			</div>
+		</div>
 {{!-- ASIDE SECTION --}}
-<div class="container bootstrap snippets bootdey">
-<div class="row ng-scope">
-    <div class="col-md-3">
-        <div class="panel panel-default">
+		<div class="container bootstrap snippets bootdey">
+			<div class="row ng-scope">
+				<div class="col-md-3">
+					<div class="panel panel-default py-3 rounded">
             <div class="panel-body text-center">
-                <h3 class="m0 text-bold">Patient </h3>
-                <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div>
-                {{!-- <td><span class="badge badge-soft-success mb-2 fs-3">Nurse</span></td> --}}
-                <div class="mv-lg">
-                    <p>Name:</p>
-                    <p>Phone:</p>
-                    <p>Email:</p>
-                </div>
-                <div id="btn-logout"><a class="btn btn-sm" href="/">View Details</a></div>
+							<h3 class="m0 text-bold">Medical Professional</h3>
+							<div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Contact"></div>
+							<td><span class="badge badge-soft-success mb-2 fs-3">Name: {{patient.first_name}} {{patient.last_name}}</span></td>
+							<div class="mv-lg">
+								<p>DOB: {{formatDate patient.dob 'MMM Do YYYY'}}</p>
+								<p>Height: {{patient.height}}</p>
+								<p>Weight: {{patient.weight}}</p>
+							</div>
             </div>
-        </div>
-        {{!-- **** REMOVED ACTIVE PATIENT PANEL UNTIL WE NEED IT --}}
-        {{!-- <div class="panel panel-default hidden-xs hidden-sm">
-            <div class="panel-heading">
-                <div class="panel-title text-center">Active Patients</div>
-            </div>
-            <div class="panel-body">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="#"><img class="media-object img-circle img-thumbnail thumb48" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Contact"></a>
-                    </div>
-                    <div class="media-body pt-sm">
-                        <div class="text-bold">Floyd Ortiz
-                            <div class="text-sm text-muted">12m ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-    </div>
-    <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
-           
-{{!-- PATIENT LIST SECTION--}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-{{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" /> --}}
-<div class="container">
-    
-    <div class="col-md-6 float-xxl-end">
-                <div>
-                    <a href="#" data-bs-toggle="modal" data-bs-target=".add-new" class="btn btn-sm btn-light float-xxl-end"><i class="bx bx-plus me-1"></i>Add Prescription</a>
-                </div>
-    </div>
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="mb-3">
-                <h5 class="card-title">Current Prescription List</h5>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="panel panel-default py-3 rounded">
+						<div class="panel-body">
+							{{!-- PRESCRIPTIONS LIST SECTION--}}
+							<div class="container">
+								<div class="row align-items-center">
+										<div class="col-md-6">
+												<div class="mb-3">
+														<h5 class="card-title">Prescriptions List</h5>
+												</div>
+										</div>
+								</div>
 
-    <div class="row">
-        <div class="col-lg-12">
-                <div class="table-responsive">
-                    <table class="table project-list-table table-nowrap align-middle table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="ps-4" style="width: 50px;">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck" /><label class="form-check-label" for="contacusercheck"></label></div>
-                                </th>
-                                <th scope="col">Med Name</th>
-                                <th scope="col">Dosage</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Dispensed on</th>
-                                <th scope="col">Started On</th>
-                                <th scope="col">Ended On</th>
-                                <th scope="col" style="width: 200px;">Action</th>
-                            </tr>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="table-responsive">
+											<table id="prescriptions-table" class="table project-list-table table-nowrap align-middle table-borderless">
+                        <thead class="rounded">
+                          <tr>
+														<th scope="col">Med Name</th>
+														<th scope="col">Brand</th>
+														<th scope="col">Dosage</th>
+														<th scope="col">Quantity</th>
+														<th scope="col">Dispensed on</th>
+													</tr>
                         </thead>
-                          {{#each patientmeds as |patientmed|}} 
+												{{#each meds as |med|}} 
                         <tbody>
-                            {{#each patientmed.Meds as |med| }}
-                                {{!-- {{#each med.prescription as |prescription|}} --}}
-                              <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input" id="contacusercheck1" /><label class="form-check-label" for="contacusercheck1"></label></div>
-                                </th>
-                                <td class="pt-lname">{{med.name}}</td>
-                                <td class="pt-lname">{{prescription.dose}}</td>
-                                <td class="pt-lname">{{prescription.quantity}}</td>
-                                <td class="pt-dob">{{formatDate prescription.dispense_date 'MMM Do YYYY'}}</td>
-                                <td class="pt-dob">{{formatDate prescription.date_started 'MMM Do YYYY'}}</td>
-                                {{#has_passed prescription.date_ended}}
-                                <td class="pt-dob">{{formatDate prescription.date_ended 'MMM Do YYYY'}}</td>
-                                 {{else}}
-                                <td class="pt-dob" style="color:red;">{{formatDate prescription.date_ended 'MMM Do YYYY'}}</td>
-                               
-                                {{/has_passed}}
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="px-2 text-primary"><i class="bx bx-pencil font-size-18"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive" class="px-2 text-primary"><i class="bx bx-trash font-size-18"></i></a>
-                                        </li>
-                                        {{#has_passed prescription.date_ended}}
-                                        {{else}}
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" title="Warning:Prescription Expired" class="px-2 text-primary"><i class="bx bx-error-alt font-size-18"></i></a>
-                                        </li>
-                                        {{/has_passed}}
-
-                                    </ul>
-                                </td>
-                            {{/each}}
-                            </tr>
+													<tr>
+														<td class="med-name">{{med.name}}</td>
+                            <td class="pt-lname">{{med.maker}}</td>
+														<td class="pt-dob">{{med.prescription.dose}}</td>
+														<td class="pt-age">{{med.prescription.quantity}}</td>
+														<td class="pt-email">{{formatDate med.prescription.dispense_date 'MMM Do YYYY'}}</td>
+													</tr>
                         </tbody>
                         {{/each }} 
-                    </table>
-                </div>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> 
+          </div>
         </div>
+      </div>
     </div>
-    {{!-- <div class="row g-0 align-items-center pb-4">
-        <div class="col-sm-6">
-            <div><p class="mb-sm-0">Showing 1 to 10 of 57 entries</p></div>
-        </div>
-        <div class="col-sm-6">
-            <div class="float-sm-end">
-                <ul class="pagination mb-sm-0">
-                    <li class="page-item disabled">
-                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item">
-                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> --}}
-</div> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+	</div>
+</main>

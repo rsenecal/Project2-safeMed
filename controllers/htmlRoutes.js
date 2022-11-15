@@ -57,35 +57,28 @@ router.get('/dashboard/:id', async (req, res) => {
   }
 });
 
-router.get('/patientmeds', async (req, res) => {
+router.get('/patientmeds/:id', async (req, res) => {
+  const patientId = req.params.id;
   try {
-    const patientData = await Patient.findAll({
+    const patientData = await Patient.findOne({
+      where: {
+        id: patientId,
+      },
       include: [{ model: Med, through: Prescription }],
-      // *** We need a where clause if we create a relationship between patients and meds
-      //  Currently patient is not link to user.
-      //   where: {
-      //     patient_id: req.session.userId,
-      //   },
     });
-    // const prescriptions = prescriptiontData.map((prescription) =>
-    //   prescription.get({ plain: true })
-    // );
-    // res.render('prescriptions', {
-    //   prescriptions,
-    //   loggedIn: req.session.loggedIn,
-    // });
-    // res.status(200).json(patients);
-    const patientmeds = patientData.map((patient) =>
-      patient.get({ plain: true })
-    );
-    // console.dir (patientmeds[1].Meds[0]);
-    res.render('patientmeds', {
-      patientmeds,
+
+    // res.json(patientData);
+
+    const patient = patientData.get({ plain: true });
+    const meds = patientData.Meds.map((meds) => meds.get({ plain: true }));
+    res.status(200).render('patientmeds', {
+      patient,
+      meds,
       loggedIn: req.session.loggedIn,
     });
     // res.status(200).json(patientmeds);
   } catch (err) {
-    res.status(400).json({ err, msg: 'Something is not right' });
+    res.status(500).json({ err, msg: 'Something is not right' });
   }
 });
 
