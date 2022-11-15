@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { checkAuth, checkUser } = require('../middlewares/index');
+const { checkAuth } = require('../middlewares/index');
 const { Patient, User, Prescription, Med } = require('../models');
 
 //GET homepage
@@ -28,24 +28,29 @@ router.get('/user-select', checkAuth, async (req, res) => {
   }
 });
 
-// GET /dashboard - render dashboard page
-router.get('/dashboard', checkUser, async (req, res) => {
+// GET /dashboard/:id - render dashboard page
+router.get('/dashboard/:id', async (req, res) => {
   try {
-    const patientData = await Patient.findAll({
-      // *** We need a where clause if we create a relationship between patients and uer
-      //  Currently patient is not link to user.
-      //   where: {
-      //     user_id: req.session.userId,
-      //   },
+    const userId = req.params.id;
+    const userData = await User.findOne({
+      where: {
+        id: userId,
+      },
+      include: [{ model: Patient, through: Prescription }],
     });
-    const patients = patientData.map((patient) => patient.get({ plain: true }));
-    res.render('dashboard', {
+
+    const user = userData.get({ plain: true });
+    const patients = userData.patients.map((patient) =>
+      patient.get({ plain: true })
+    );
+
+    res.status(200).render('dashboard', {
+      user,
       patients,
       loggedIn: req.session.loggedIn,
     });
-    // res.status(200).json(patients);
   } catch (err) {
-    res.status(400).json({ err, msg: 'Something is not right' });
+    res.status(500).json({ err, msg: 'Something is not right' });
   }
 });
 
