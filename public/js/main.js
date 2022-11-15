@@ -6,7 +6,9 @@ navBtnContainer.addEventListener('click', async (e) => {
   e.preventDefault();
   const targetId = e.target.getAttribute('id');
   // conditional statements to handle the dynamically rendered buttons
-  if (targetId === 'dashboard') {
+  if (targetId === 'purchase') {
+    window.location.replace('/pricing');
+  } else if (targetId === 'dashboard') {
     if (currentUserId) {
       window.location.replace(`/dashboard/${currentUserId}`);
     }
