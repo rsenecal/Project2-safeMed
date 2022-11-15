@@ -39,7 +39,7 @@
   - Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
 
   ## Credits
-   Sindid Eedh, Evince Edouard, Jeff Grasso, Hasan Noor, Roodolph Senecal, Bria
+   Sindid Reedh, Evince Edouard, Jeff Grasso, Hasan Noor, Roodolph Senecal, Bria
 
   ## Questions
   Feel free to contact any of the contributors of this project via github profiles to the right.
