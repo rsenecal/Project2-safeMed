@@ -36,20 +36,19 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/users - makes a new user
-router.post('/', async (req, res) => {
-  // get user data from the req.body
-  // const {username, password, email, first_name, last_name, title, role} = req.body;
-  // create a new user
-  const user = await User.create(req.body);
-  // add user info to the session
-  // 
-  req.session.save(() => {
-    req.session.loggedIn = true;
-    req.session.userId = user.id;
-    res.json(user);
-  });
-});
+// // POST /api/users - makes a new user
+// router.post('/', async (req, res) => {
+//   // get user data from the req.body
+//   // const {username, password, email, first_name, last_name, title, role} = req.body;
+//   // create a new user
+//   const user = await User.create(req.body);
+//   // add user info to the session
+//   req.session.save(() => {
+//     req.session.loggedIn = true;
+//     req.session.userId = user.id;
+//     res.json(user);
+//   });
+// });
 
 // // POST /api/users/login - logs a user in
 // router.post('/login', async (req, res) => {
@@ -89,16 +88,16 @@ router.post('/', async (req, res) => {
 //   });
 // });
 
-// GET /api/users/logout - makes a new user
-router.get('/logout', async (req, res) => {
-  if (req.session.loggedIn) {
-    // add user info to the session
-    //   req.session.destroy(()=> {
-    res.status(204).end();
-    // });
-  } else {
-    res.status(404).end();
-  }
-});
+// // GET /api/users/logout - makes a new user
+// router.get('/logout', async (req, res) => {
+//   if (req.session.loggedIn) {
+//     // add user info to the session
+//     //   req.session.destroy(()=> {
+//     res.status(204).end();
+//     // });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;

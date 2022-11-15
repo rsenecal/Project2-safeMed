@@ -54,6 +54,7 @@ main {
   color: var(--cream-color);
   font-size: 3rem;
   text-shadow: 1px 1px 2px var(--secondary-color);
+  margin-right: auto;
 }
 
 #nav-btn-container .btn-primary,
@@ -71,19 +72,19 @@ main {
   font-size: 1.4rem;
 }
 
+#view-btn {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
 #nav-btn-container .btn-primary:hover,
 #btn-sign-up:hover,
 #btn-login:hover,
-#user-select-container .btn-primary:hover {
+#user-select-container .btn-primary:hover,
+#view-btn:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;
 }
-
-#view-btn {
-    background-color: white;
-    border: none;
-}
-
 
 /* Form Styles */
 #sign-up-form,
@@ -121,16 +122,15 @@ main {
 
 /*  LAYOUT STYLE FOR DASHBOARD & PATIENTS */
 #addpt-btn .btn {
-    background: var(--secondary-color);
-    color: var(--cream-color);
-  }
+	background: var(--secondary-color);
+	color: var(--cream-color);
+}
 
 #btn-logout .btn {
-    background: var(--secondary-color);
-    color: var(--cream-color);
+	background: var(--secondary-color);
+	color: var(--cream-color);
 }
-body{
-  margin-top:20px;
+body {
   background:#f5f7fa;
 }
 .panel.panel-default {
@@ -151,82 +151,81 @@ body{
   height: 48px!important;
 }
 
-body{margin-top:20px;
-  background-color:#eee;
-  }
-  .project-list-table {
-      border-collapse: separate;
-      border-spacing: 0 12px
-  }
-  
-  .project-list-table tr {
-      background-color: #fff
-  }
-  
-  .table-nowrap td, .table-nowrap th {
-      white-space: nowrap;
-  }
-  .table-borderless>:not(caption)>*>* {
-      border-bottom-width: 0;
-  }
-  .table>:not(caption)>*>* {
-      padding: 0.75rem 0.75rem;
-      background-color: var(--bs-table-bg);
-      border-bottom-width: 1px;
-      box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
-  }
-  
-  .avatar-sm {
-      height: 2rem;
-      width: 2rem;
-  }
-  .rounded-circle {
-      border-radius: 50%!important;
-  }
-  .me-2 {
-      margin-right: 0.5rem!important;
-  }
-  img, svg {
-      vertical-align: middle;
-  }
-  
-  a {
-      color: #3b76e1;
-      text-decoration: none;
-  }
-  
-  .badge-soft-danger {
-      color: #f56e6e !important;
-      background-color: rgba(245,110,110,.1);
-  }
-  .badge-soft-success {
-      color: #63ad6f !important;
-      background-color: rgba(99,173,111,.1);
-  }
-  
-  .badge-soft-primary {
-      color: #3b76e1 !important;
-      background-color: rgba(59,118,225,.1);
-  }
-  
-  .badge-soft-info {
-      color: #57c9eb !important;
-      background-color: rgba(87,201,235,.1);
-  }
-  
-  .avatar-title {
-      align-items: center;
-      background-color: #3b76e1;
-      color: #fff;
-      display: flex;
-      font-weight: 500;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
-  }
-  .bg-soft-primary {
-      background-color: rgba(59,118,225,.25)!important;
-  }
+
+.project-list-table {
+	border-collapse: separate;
+	border-spacing: 0 12px
+}
+
+.project-list-table tr {
+	background-color: var(--cream-color)
+}
+
+.table-nowrap td, .table-nowrap th {
+	white-space: nowrap;
+}
+.table-borderless>:not(caption)>*>* {
+	border-bottom-width: 0;
+}
+.table>:not(caption)>*>* {
+	padding: 0.75rem 0.75rem;
+	background-color: var(--bs-table-bg);
+	border-bottom-width: 1px;
+	box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+.avatar-sm {
+	height: 2rem;
+	width: 2rem;
+}
+.rounded-circle {
+	border-radius: 50%!important;
+}
+.me-2 {
+	margin-right: 0.5rem!important;
+}
+img, svg {
+	vertical-align: middle;
+}
+
+a {
+	color: #3b76e1;
+	text-decoration: none;
+}
+
+.badge-soft-danger {
+	color: #f56e6e !important;
+	background-color: rgba(245,110,110,.1);
+}
+.badge-soft-success {
+	color: #63ad6f !important;
+	background-color: rgba(99,173,111,.1);
+}
+
+.badge-soft-primary {
+	color: #3b76e1 !important;
+	background-color: rgba(59,118,225,.1);
+}
+
+.badge-soft-info {
+	color: #57c9eb !important;
+	background-color: rgba(87,201,235,.1);
+}
+
+.avatar-title {
+	align-items: center;
+	background-color: #3b76e1;
+	color: #fff;
+	display: flex;
+	font-weight: 500;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
+}
+.bg-soft-primary {
+	background-color: rgba(59,118,225,.25)!important;
+}
+
 /* login page styles */
 .med-professional-img img {
   border-radius: 50%;
@@ -241,187 +240,186 @@ body{margin-top:20px;
 
 
 /* --- CSS FOR Pricing Table page  */
-body{margin-top:20px;}
 .section-title {
-    position: relative;
+	position: relative;
 }
 .section-title h2 {
-    color: #1d2025;
-    position: relative;
-    margin: 0;
-    font-size: 24px;
+	color: #1d2025;
+	position: relative;
+	margin: 0;
+	font-size: 24px;
 }
 @media (min-width: 768px) {
-    .section-title h2 {
-        font-size: 28px;
-    }
+	.section-title h2 {
+		font-size: 28px;
+	}
 }
 @media (min-width: 992px) {
-    .section-title h2 {
-        font-size: 34px;
-    }
+	.section-title h2 {
+		font-size: 34px;
+	}
 }
 .section-title.title-ex1 h2 {
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 @media (min-width: 768px) {
-    .section-title.title-ex1 h2 {
-        padding-bottom: 30px;
-    }
+	.section-title.title-ex1 h2 {
+		padding-bottom: 30px;
+	}
 }
 @media (min-width: 992px) {
-    .section-title.title-ex1 h2 {
-        padding-bottom: 40px;
-    }
+	.section-title.title-ex1 h2 {
+		padding-bottom: 40px;
+	}
 }
 .section-title.title-ex1 h2:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 12px;
-    width: 110px;
-    height: 1px;
-    background-color: #d6dbe2;
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 12px;
+	width: 110px;
+	height: 1px;
+	background-color: #d6dbe2;
 }
 @media (min-width: 768px) {
-    .section-title.title-ex1 h2:before {
-        bottom: 17px;
-    }
+	.section-title.title-ex1 h2:before {
+		bottom: 17px;
+	}
 }
 @media (min-width: 992px) {
-    .section-title.title-ex1 h2:before {
-        bottom: 25px;
-    }
+	.section-title.title-ex1 h2:before {
+		bottom: 25px;
+	}
 }
 .section-title.title-ex1 h2:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 12px;
-    width: 40px;
-    height: 1px;
-    background-color: #0cc652;
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 12px;
+	width: 40px;
+	height: 1px;
+	background-color: #0cc652;
 }
 @media (min-width: 768px) {
-    .section-title.title-ex1 h2:after {
-        bottom: 17px;
-    }
+	.section-title.title-ex1 h2:after {
+		bottom: 17px;
+	}
 }
 @media (min-width: 992px) {
-    .section-title.title-ex1 h2:after {
-        bottom: 25px;
-    }
+	.section-title.title-ex1 h2:after {
+		bottom: 25px;
+	}
 }
 .section-title.title-ex1.text-center h2:before {
-    left: 50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 .section-title.title-ex1.text-center h2:after {
-    left: 50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 .section-title.title-ex1.text-right h2:before {
-    left: auto;
-    right: 0;
+	left: auto;
+	right: 0;
 }
 .section-title.title-ex1.text-right h2:after {
-    left: auto;
-    right: 0;
+	left: auto;
+	right: 0;
 }
 .section-title.title-ex1 p {
-    font-family: "Montserrat", sans-serif;
-    color: #8b8e93;
-    font-size: 14px;
-    font-weight: 300;
+	font-family: "Montserrat", sans-serif;
+	color: #8b8e93;
+	font-size: 14px;
+	font-weight: 300;
 }
 
 
 .price-card {
-    background: #f5f5f6;
-    padding: 40px 35px;
-    position: relative;
-    border-radius: 2px;
-    overflow: hidden;
+	background: #f5f5f6;
+	padding: 40px 35px;
+	position: relative;
+	border-radius: 2px;
+	overflow: hidden;
 }
 .price-card:before {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: -35px;
-    width: 88px;
-    height: 88px;
-    background: #0cc652;
-    opacity: 0.2;
-    border-radius: 8px;
-    transform: rotate(45deg);
+	position: absolute;
+	content: "";
+	top: 0;
+	right: -35px;
+	width: 88px;
+	height: 88px;
+	background: #0cc652;
+	opacity: 0.2;
+	border-radius: 8px;
+	transform: rotate(45deg);
 }
 .price-card:after {
-    position: absolute;
-    content: "";
-    top: 30px;
-    right: -35px;
-    width: 88px;
-    height: 88px;
-    background: #0cc652;
-    opacity: 0.2;
-    border-radius: 8px;
-    transform: rotate(45deg);
+	position: absolute;
+	content: "";
+	top: 30px;
+	right: -35px;
+	width: 88px;
+	height: 88px;
+	background: #0cc652;
+	opacity: 0.2;
+	border-radius: 8px;
+	transform: rotate(45deg);
 }
 .price-card h2 {
-    font-size: 26px;
-    font-weight: 600;
+	font-size: 26px;
+	font-weight: 600;
 }
 .price-card .btn {
-    font-size: 11px;
-    border-radius: 100px;
-    padding: 0 25px;
-    border: 0;
-    color: #fff;
-    float: right;
+	font-size: 11px;
+	border-radius: 100px;
+	padding: 0 25px;
+	border: 0;
+	color: #fff;
+	float: right;
 }
 .price-card .btn.btn-primary {
-    border: 0 !important;
+	border: 0 !important;
 }
 .price-card.featured {
-    background: #fff;
-    border: 1px solid #ebebeb;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	background: #fff;
+	border: 1px solid #ebebeb;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 .price-card:hover .btn {
-    background: #0cc652;
-    border-color: #0cc652;
+	background: #0cc652;
+	border-color: #0cc652;
 }
 p.price span {
-    display: inline-block;
-    padding: 45px 15px 50px;
-    padding-right: 0;
-    font-size: 50px;
-    font-weight: 600;
-    color: #0cc652;
-    position: relative;
+	display: inline-block;
+	padding: 45px 15px 50px;
+	padding-right: 0;
+	font-size: 50px;
+	font-weight: 600;
+	color: #0cc652;
+	position: relative;
 }
 p.price span:before {
-    position: absolute;
-    content: "$";
-    font-size: 16px;
-    top: 25px;
-    font-weight: 300;
-    left: 0;
+	position: absolute;
+	content: "$";
+	font-size: 16px;
+	top: 25px;
+	font-weight: 300;
+	left: 0;
 }
 .pricing-offers {
-    padding: 0 0 10px;
+	padding: 0 0 10px;
 }
 .pricing-offers li {
-    padding: 0 0 16px;
-    line-height: 18px;
+	padding: 0 0 16px;
+	line-height: 18px;
 }
 ul li {
-    list-style-type: none;
+	list-style-type: none;
 }
 .btn.btn-mid {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
 }
 
 .cartlogo {
