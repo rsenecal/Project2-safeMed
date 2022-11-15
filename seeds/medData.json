@@ -14,5 +14,124 @@
     {
         "name": "Asprin",
         "maker": "Bayer"
+    },
+
+    {
+        "name": "Abilify",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Accupril",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Aemcolo",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Agrylin",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Bylvay",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Cabenuva",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Camzyos",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Carbaglu",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Daypro",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Descovy",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Efudex",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Entresto",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Kanuma",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Kazano",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Kimmtrak",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Koselugo",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Lexiscan",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Accupril",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Mastisol",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Mepsevii",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Motegrity",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Myrbetriq",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Prezista",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Promacta",
+        "maker": "Bayer"
+    },
+
+    {
+        "name": "Qinlock",
+        "maker": "Pfizer"
+    },
+    {
+        "name": "Descovy",
+        "maker": "Hetero Drugs"
+    },
+    {
+        "name": "Retevmo",
+        "maker": "Apyx Medical Corp."
+    },
+    {
+        "name": "Rituxan",
+        "maker": "Bayer"
     }
 ]

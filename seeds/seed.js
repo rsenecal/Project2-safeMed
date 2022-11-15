@@ -41,8 +41,8 @@ const seedDatabase = async () => {
     await Prescription.create({
       ...prescription,
       user_id: users[Math.floor(Math.random() * users.length)].id,
-      med_id: meds[Math.floor(Math.random() * users.length)].id,
-      patient_id: patients[Math.floor(Math.random() * users.length)].id,
+      med_id: meds[Math.floor(Math.random() * meds.length)].id,
+      patient_id: patients[Math.floor(Math.random() * patients.length)].id,
     });
   }
 

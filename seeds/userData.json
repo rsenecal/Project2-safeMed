@@ -25,5 +25,61 @@
         "title": "Mr.",
         "password": "password",
         "role": "Pharmacist"
+    },
+    {
+        "username": "Aron",
+        "email": "aronembla@gmail.com",
+        "first_name": "Aron",
+        "last_name": "Embla",
+        "title": "Mrs.",
+        "password": "password",
+        "role": "Nurse"
+    },
+    {
+        "username": "ViktorS",
+        "email": "viktos@gmail.com",
+        "first_name": "Viktor",
+        "last_name": "San Gunnar",
+        "title": "Dr.",
+        "password": "password",
+        "role": "Doctor"
+    },
+    {
+        "username": "Karitas",
+        "email": "karitas@gmail.com",
+        "first_name": "Karitas",
+        "last_name": "Dagur",
+        "title": "Mr.",
+        "password": "password",
+        "role": "Pharmacist"
+    },
+    {
+        "username": "harpa",
+        "email": "harpa@gmail.com",
+        "first_name": "Hapa",
+        "last_name": "Ulfur",
+        "title": "Mrs.",
+        "password": "password",
+        "role": "Nurse"
+    },
+    {
+        "username": "Klara",
+        "email": "vklara@gmail.com",
+        "first_name": "Klara",
+        "last_name": "Olafur",
+        "title": "Dr.",
+        "password": "password",
+        "role": "Doctor"
+    },
+    {
+        "username": "Arney",
+        "email": "solvi@gmail.com",
+        "first_name": "Arney",
+        "last_name": "Solvi",
+        "title": "Mr.",
+        "password": "password",
+        "role": "Pharmacist"
     }
+
+    
 ]
