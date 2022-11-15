@@ -98,8 +98,7 @@ app.use(
 
 
 // This is your test secret API key.
-const stripe = require('stripe')(keys.stripeSecretKey);
-// ('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
+const stripe = require('stripe')(process.env.STRIPE_SECRET);
 const YOUR_DOMAIN = process.env.YOUR_DOMAIN;
 
 
