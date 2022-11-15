@@ -8,7 +8,7 @@ const exphbs = require('express-handlebars');
 const moment = require('moment');
 // const stripe = require('stripe')(keys.stripeSecretKey);
 // const bodyParser = require('body-parser');
-// const keys = require('./config/keys');
+const keys = require('./config/keys_dev');
 
 // Add for stripe.com integration
 // const bodyParser = require('body-parser');
@@ -84,9 +84,12 @@ app.use(
 
 
 // This is your test secret API key.
-const stripe = require('stripe')('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
-const YOUR_DOMAIN = 'http://localhost:3001';
+const stripe = require('stripe')(keys.stripeSecretKey);
+// ('sk_test_51M34BwJ206BF34Y880WsMHpIkagG3ebN3JmLKaVDsDIBXr21yMs6dCibd1VlFA6w5izcr3tjv8jSfpPWWdXzW29l00kmxx3ZYp');
+const YOUR_DOMAIN = process.env.YOUR_DOMAIN;
 
+
+// Purchasing the basic plan
 app.post('/checkoutplan1', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -100,10 +103,45 @@ app.post('/checkoutplan1', async (req, res) => {
     success_url: `${YOUR_DOMAIN}/paymentcompleted`,
     cancel_url: `${YOUR_DOMAIN}/cancel`,
   });
+  res.redirect(303, session.url);
+});
+
+// Purchasing the Plus Plan
+app.post('/checkoutplan2', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1M4AGAJ206BF34Y8g15swriB',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/paymentcompleted`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
+  });
 
   res.redirect(303, session.url);
 });
 
+
+// Purchasing the Premium Plan
+app.post('/checkoutplan3', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1M4AN1J206BF34Y82o92dcMp',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/paymentcompleted`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
+  });
+
+  res.redirect(303, session.url);
+});
 
 app.use(routes);
 
@@ -112,9 +150,3 @@ sequelize.sync({ force: false }).then(() => {
     console.log(`Example app listening at http://localhost:${PORT}`)
   );
 });
-
-// app.listen(PORT, () =>
-//   console.log(`Example app listening at http://localhost:${PORT}`)
-// );
-// app.get('/', (req, res) =>
-//   res.sendFile(path.join(__dirname, 'public/index.html')))
