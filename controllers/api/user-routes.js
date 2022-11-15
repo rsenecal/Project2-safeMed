@@ -36,7 +36,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // // POST /api/users - makes a new user
 // router.post('/', async (req, res) => {
 //   // get user data from the req.body
@@ -50,22 +49,6 @@ router.get('/:id', async (req, res) => {
 //     res.json(user);
 //   });
 // });
-=======
-// POST /api/users - makes a new user
-router.post('/', async (req, res) => {
-  // get user data from the req.body
-  // const {username, password, email, first_name, last_name, title, role} = req.body;
-  // create a new user
-  const user = await User.create(req.body);
-  // add user info to the session
-  // 
-  req.session.save(() => {
-    req.session.loggedIn = true;
-    req.session.userId = user.id;
-    res.json(user);
-  });
-});
->>>>>>> 1f27ad43e81e450cadde866691d1efe412c9fb6d
 
 // // POST /api/users/login - logs a user in
 // router.post('/login', async (req, res) => {
