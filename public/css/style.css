@@ -23,10 +23,11 @@ h1 {
   text-shadow: 2px 2px 4px #8f8f8f;
 }
 
-/* h2,
-h3 {
-  color: black
-} */
+h6 {
+	text-align: center;
+	color: var(--cream-color);
+	padding-bottom: 1rem;
+}
 
 /* main elemetn styles */
 main {
@@ -72,25 +73,45 @@ main {
   font-size: 1.4rem;
 }
 
-#patients-table .view-btn {
+#patients-table button,
+#add-btn, 
+#add-close {
     background-color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
+}
+
+#add-btn {
+	margin-left: auto;
+	margin-right: 1rem;
+}
+
+#add-close {
+	font-size: 1.2rem;
 }
 
 #nav-btn-container .btn-primary:hover,
 #btn-sign-up:hover,
 #btn-login:hover,
 #user-select-container .btn-primary:hover,
-#patients-table .view-btn:hover {
+#patients-table button:hover,
+#add-btn:hover,
+#add-close:hover {
   border-color: var(--tertiary-color);
   transition: 0.3s ease-in-out;
 }
 
+
 /* Form Styles */
 #sign-up-form,
+#modals form,
 .form-container {
   border: 1px solid var(--tertiary-color);
   background-color: var(--primary-color);
+}
+
+#modals form {
+	max-height: 70vh;
+	overflow-y: scroll;
 }
 
 .form-container p {
@@ -130,6 +151,22 @@ main {
 	background: var(--secondary-color);
 	color: var(--cream-color);
 }
+
+.hidden {
+	display: none !important;
+}
+
+.modal-container {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(26, 27, 30, 0.5);
+	padding: 3rem;
+}
+
 body {
   background:#f5f7fa;
 }
