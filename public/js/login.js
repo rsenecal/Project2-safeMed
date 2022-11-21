@@ -19,6 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json' },
     });
     // check if login was successful
+    console.log(response);
     if (response.ok) {
       // send to user select page
       window.location.replace('/user-select');

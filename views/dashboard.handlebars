@@ -32,9 +32,10 @@
 							{{!-- PATIENT LIST SECTION--}}
 							<div class="container">
 								<div class="row align-items-center">
-										<div class="col-md-6">
-												<div class="mb-3">
+										<div class="fluid">
+												<div class="d-flex justify-content-start mb-3">
 														<h5 class="card-title">Patient List</h5>
+														<button type="button" id="add-btn" class="btn btn-primary"  data-toggle="modal" data-target="#addPatientModal">Add Patient</button>
 												</div>
 										</div>
 								</div>
@@ -51,7 +52,7 @@
 														<th scope="col">Height</th>
 														<th scope="col">Weight</th>
 														<th scope="col">Email</th>
-														<th scope="col" style="width: 200px;">View Prescriptions</th>
+														<th scope="col" style="width: 200px;">Actions</th>
 													</tr>
                         </thead>
 												{{#each patients as |patient|}} 
@@ -70,7 +71,15 @@
 															<ul class="list-inline mb-0">
 																<li class="list-inline-item">
 																{{!-- onclik btn feat to patient --}}
-																	<button id="{{patient.id}}" class="view-btn btn btn-primary">View</button>
+																	<button id="view" value="{{patient.id}}" class="view-btn btn btn-primary">View</button>
+																</li>
+																<li class="list-inline-item">
+																{{!-- onclik btn feat to patient --}}
+																	<button id="edit" class="btn btn-primary" value="{{patient.id}}">Edit</button>
+																</li>
+																<li class="list-inline-item">
+																{{!-- onclik btn feat to patient --}}
+																	<button id="delete" class="btn btn-primary" value="{{patient.id}}">Delete</button>
 																</li>
 															</ul>
 														</td>
@@ -89,4 +98,96 @@
     </div>
 	</div>
 </main>
-<script src="/js/dashboard.js"></script>
+<section id="modals">
+	<div id="add-patient-modal" class="modal-container d-flex justify-content-center align-items-center hidden">
+		<div class="col-md-10 mx-auto col-lg-5 position-relative">
+			<button id="add-close" class="btn btn-primary w-100">Close</button>
+			<form id="add-patient-form" class="p-4 p-md-5 rounded-3">
+				<h6 class="display-5">Add New Patient</h6>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingFirstName" placeholder="First Name" required>
+					<label for="floatingFirstName">First Name</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingLastName" placeholder="Last Name" required>
+					<label for="floatingLastName">Last Name</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+					<label for="floatingEmail">Email Address</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingHeight" placeholder="Height" required>
+					<label for="floatingHeight">Height</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingWeight" placeholder="Weight" required>
+					<label for="floatingWeight">Weight</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingStreetAddress" placeholder="1 Main St." required>
+					<label for="floatingStreetAddress">Street Address</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingCity" placeholder="City" required>
+					<label for="floatingCity">City</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingState" placeholder="State" required>
+					<label for="floatingState">State</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="floatingZip" placeholder="Postal Code" required>
+					<label for="floatingZip">Postal Code</label>
+				</div>
+				<button id="add-submit" class="w-100 btn btn-lg" type="submit">Sign up</button>
+			</form>
+		</div>
+	</div>
+	<div id="edit-patient-modal" class="modal-container d-flex justify-content-center align-items-center hidden">
+		<div class="col-md-10 mx-auto col-lg-5 position-relative">
+			<button id="add-close" class="btn btn-primary w-100">Close</button>
+			<form id="edit-patient-form" class="p-4 p-md-5 rounded-3">
+				<h6 class="display-5">Add New Patient</h6>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingFirstName" placeholder="First Name">
+					<label for="editFloatingFirstName">First Name</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingLastName" placeholder="Last Name">
+					<label for="editFloatingLastName">Last Name</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="email" class="form-control" id="editFloatingEmail" placeholder="name@example.com">
+					<label for="editFloatingEmail">Email Address</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingHeight" placeholder="Height">
+					<label for="editFloatingHeight">Height</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingWeight" placeholder="Weight">
+					<label for="editFloatingWeight">Weight</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingStreetAddress" placeholder="1 Main St.">
+					<label for="editFloatingStreetAddress">Street Address</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingCity" placeholder="City">
+					<label for="editFloatingCity">City</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingState" placeholder="State">
+					<label for="editFloatingState">State</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="editFloatingZip" placeholder="Postal Code">
+					<label for="editFloatingZip">Postal Code</label>
+				</div>
+				<button id="edit-submit" class="w-100 btn btn-lg" type="submit">Sign up</button>
+			</form>
+		</div>
+	</div>
+</section>
+<script src="/js/dashboard.js" defer></script>
