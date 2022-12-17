@@ -37,6 +37,9 @@
   - This repo requires you to install mySQL and Node.js. Visit their website to read the installation process and documentation in order to properly install applications on your system. 
   - Clone the Github SSH or HTTPS link by clicking the (GREEN) code button in our Repo.
   - Perform a NPM I inside your terminal within your repo folder to get this application set and running. 
+  
+  ## Usage
+Deployment Link: https://project2-safe-med.herokuapp.com/ 
 
   ## Credits
    Sindid Eedh, Evince Edouard, Jeff Grasso, Hasan Noor, Roodolph Senecal, Bria
